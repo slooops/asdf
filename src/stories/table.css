@@ -1,0 +1,32 @@
+.asdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.asdf-table th,
+.asdf-table td {
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  background-color: #ffffff;
+}
+
+.asdf-table th {
+  font-weight: 600;
+  border-bottom: 3px solid #ddd;
+}
+
+.asdf-table tr:hover {
+  background-color: #ffffff;
+}
+
+.asdf-table td {
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}

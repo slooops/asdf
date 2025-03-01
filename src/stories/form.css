@@ -1,0 +1,42 @@
+.form-stack {
+  align-items: stretch;
+  display: flex;
+  flex: 1 1 0px;
+  flex-flow: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.form-group {
+  align-items: center;
+  display: flex;
+  flex-direction: row; /* Arrange label and input horizontally */
+  gap: 10px; /* Add spacing between label and input */
+  justify-content: flex-start;
+}
+
+.form-control {
+  width: 60%; /* Adjust to your preferred input width */
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #616161;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #23282e;
+  margin: 0px;
+  line-height: 16px;
+  width: 40%; /* Adjust to your preferred label width */
+  text-align: left; /* Ensure label is left-aligned */
+}
+
+button {
+  margin-top: 15px;
+}
