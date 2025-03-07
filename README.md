@@ -1,4 +1,4 @@
-# To Actually Run the Storybook run:
+# To Run the Storybook run:
 
 `ng run angular-latest:storybook`. This should open `http://localhost:6006/`
 
