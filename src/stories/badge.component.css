@@ -1,0 +1,30 @@
+.asdf-badge {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Badge Variants */
+.asdf-badge--success {
+  background-color: #28a745;
+  color: white;
+}
+
+.asdf-badge--warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.asdf-badge--error {
+  background-color: #dc3545;
+  color: white;
+}
+
+.asdf-badge--neutral {
+  background-color: #6c757d;
+  color: white;
+}
