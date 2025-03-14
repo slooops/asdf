@@ -1,0 +1,51 @@
+:host {
+  font-family: "Inter", sans-serif;
+}
+
+.asdf-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.asdf-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.asdf-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e1e4e8;
+  padding-bottom: 10px;
+}
+
+.asdf-modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.asdf-modal-body {
+  margin: 15px 0;
+}
+
+.asdf-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}

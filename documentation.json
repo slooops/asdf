@@ -135,6 +135,83 @@
             "extends": []
         },
         {
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-86b8f7a3c88e96c060c4852dac0aee8cee36b47d5e3836dfdcdbdd14e21e3fc48988a3e270b7ed6e26afa73abc6c450b8886610fbd554b3b944f3a3118c8a9ad",
+            "file": "src/stories/badge.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-badge",
+            "styleUrls": [
+                "./badge.component.css"
+            ],
+            "styles": [],
+            "template": "<span class=\"asdf-badge\" [ngClass]=\"badgeType\">\n  {{ label }}\n</span>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "\"Badge\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "\"neutral\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"success\" | \"warning\" | \"error\" | \"neutral\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-badge\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span class=\"asdf-badge\" [ngClass]=\"badgeType\">\n      {{ label }}\n    </span>\n  `,\n  styleUrls: [\"./badge.component.css\"],\n})\nexport class BadgeComponent {\n  @Input() label: string = \"Badge\";\n  @Input() type: \"success\" | \"warning\" | \"error\" | \"neutral\" = \"neutral\";\n\n  get badgeType(): string {\n    return `asdf-badge--${this.type}`;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".asdf-badge {\n  font-family: \"Inter\", sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  padding: 4px 8px;\n  border-radius: 12px;\n  display: inline-block;\n  text-align: center;\n}\n\n/* Badge Variants */\n.asdf-badge--success {\n  background-color: #28a745;\n  color: white;\n}\n\n.asdf-badge--warning {\n  background-color: #ffc107;\n  color: #333;\n}\n\n.asdf-badge--error {\n  background-color: #dc3545;\n  color: white;\n}\n\n.asdf-badge--neutral {\n  background-color: #6c757d;\n  color: white;\n}\n",
+                    "styleUrl": "./badge.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "badgeType": {
+                    "name": "badgeType",
+                    "getSignature": {
+                        "name": "badgeType",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 19
+                    }
+                }
+            }
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-c6cc50bff0f75ae3b13c9a8ed099dc37893db57d5ec351563ce468cabd3891b85ec1528e7c407a9cd28ddd30c4ea0c7e523bb3e2973c5598e7551778f849290d",
             "file": "src/stories/button.component.ts",
@@ -608,6 +685,123 @@
             "extends": []
         },
         {
+            "name": "ModalComponent",
+            "id": "component-ModalComponent-41c8260c593e7f2661581a2219f7ed5b50564a129203b9a03e6d19910862b3fac83a9d29f667fcfd2f911e4d34a8fa7eef7da530667d4802a78e64b2cd4b826f",
+            "file": "src/stories/modal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-modal",
+            "styleUrls": [
+                "./modal.component.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n<div class=\"asdf-modal\" *ngIf=\"isOpen\">\n  <div class=\"asdf-modal-header\">\n    <h3>{{ title }}</h3>\n    <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n  </div>\n  <div class=\"asdf-modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n    <asdf-button\n      label=\"Cancel\"\n      type=\"secondary\"\n      (click)=\"close()\"\n    ></asdf-button>\n    <asdf-button\n      label=\"Confirm\"\n      type=\"primary\"\n      (click)=\"confirm()\"\n    ></asdf-button>\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showActions",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "\"Modal Title\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "closeModal",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "confirmAction",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "close",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "confirm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { ButtonComponent } from \"./button.component\";\n\n@Component({\n  selector: \"asdf-modal\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `\n    <div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n    <div class=\"asdf-modal\" *ngIf=\"isOpen\">\n      <div class=\"asdf-modal-header\">\n        <h3>{{ title }}</h3>\n        <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n      </div>\n      <div class=\"asdf-modal-body\">\n        <ng-content></ng-content>\n      </div>\n      <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n        <asdf-button\n          label=\"Cancel\"\n          type=\"secondary\"\n          (click)=\"close()\"\n        ></asdf-button>\n        <asdf-button\n          label=\"Confirm\"\n          type=\"primary\"\n          (click)=\"confirm()\"\n        ></asdf-button>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./modal.component.css\"],\n})\nexport class ModalComponent {\n  @Input() title: string = \"Modal Title\";\n  @Input() isOpen: boolean = false;\n  @Input() showActions: boolean = true;\n  @Output() closeModal = new EventEmitter<void>();\n  @Output() confirmAction = new EventEmitter<void>();\n\n  close() {\n    this.closeModal.emit();\n  }\n\n  confirm() {\n    this.confirmAction.emit();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  font-family: \"Inter\", sans-serif;\n}\n\n.asdf-modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 1000;\n}\n\n.asdf-modal {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: white;\n  padding: 20px;\n  width: 400px;\n  border-radius: 8px;\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);\n  z-index: 1001;\n  min-height: 200px; /* Ensures modal always has space */\n  max-height: 90vh; /* Prevents it from getting too large */\n  overflow-y: auto; /* Allows scrolling if needed */\n}\n\n.asdf-modal-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid #e1e4e8;\n  padding-bottom: 10px;\n}\n\n.asdf-modal-close {\n  background: none;\n  border: none;\n  font-size: 16px;\n  cursor: pointer;\n}\n\n.asdf-modal-body {\n  margin: 15px 0;\n}\n\n.asdf-modal-footer {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n}\n",
+                    "styleUrl": "./modal.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
             "file": "src/stories/page.component.ts",
@@ -1026,7 +1220,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 21,
+        "count": 18,
         "status": "low",
         "files": [
             {
@@ -1046,6 +1240,15 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1082,6 +1285,15 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
