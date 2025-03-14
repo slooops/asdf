@@ -13,5 +13,10 @@ const config: StorybookConfig = {
     name: "@storybook/angular",
     options: {},
   },
+  staticDirs: ["../public"], // Ensure static files load properly
+  managerHead: (head) => `
+    ${head}
+    <base href="/asdf/storybook-static/">
+  `,
 };
 export default config;
