@@ -80,7 +80,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-f7d20a47fa339b54b0975adc366a58ccbcb30bf15b231e19387cfc5e1d4e3235909f35da4926b0d6ca3a711ca6bb83e1c7732a1cdfe7be51b1a9f8595dc2aed1",
+            "id": "component-AccordionComponent-cdafe397ae6a5f303b87bff57769ece5f0a7b431295f7847728defc7cadd7c12d87035e0b5647d0dea190e132f2d11a1f2afb8f73b4d83122349e6802d79a9f7",
             "file": "src/stories/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                 "./accordion.component.css"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-accordion\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <span class=\"asdf-accordion-icon\">{{ open ? \"▼\" : \"▶\" }}</span>\n  </button>\n  <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n    <ng-content></ng-content>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-accordion\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <span class=\"asdf-accordion-icon\">{{ open ? \"▿\" : \"▹\" }}</span>\n  </button>\n  <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n    <ng-content></ng-content>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -144,11 +144,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <span class=\"asdf-accordion-icon\">{{ open ? \"▼\" : \"▶\" }}</span>\n      </button>\n      <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <span class=\"asdf-accordion-icon\">{{ open ? \"▿\" : \"▹\" }}</span>\n      </button>\n      <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-accordion {\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  font-weight: 600;\n  padding: 10px;\n  background: #f7f7f7;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n}\n\n.asdf-accordion-content {\n  padding: 10px;\n  background: white;\n  border-top: 1px solid #ccc;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n}\n",
+                    "data": ".asdf-accordion {\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  font-weight: 600;\n  padding: 10px;\n  background: #f7f7f7;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n}\n\n.asdf-accordion-content {\n  padding: 10px;\n  background: white;\n  border-top: 1px solid #ccc;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n",
                     "styleUrl": "./accordion.component.css"
                 }
             ],
@@ -1479,7 +1479,7 @@
         },
         {
             "name": "ToastComponent",
-            "id": "component-ToastComponent-d5ca9748b40e288b7b42867afe814a8a3dc0212fbd0291de6293d5c27142f95400c78545a9a04d34f18c8eea1b58cca4982168c4758e2f5e8261094dc7a979a8",
+            "id": "component-ToastComponent-00aa2125312a4735fb6f108a76a9f816e8bb880f18f5a139a4db55faa3f36720f5e1a51645b08d15414bfba0ec17960c4729fb3a84894290882fb92446de5ed9",
             "file": "src/stories/toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1498,7 +1498,7 @@
             "inputsClass": [
                 {
                     "name": "duration",
-                    "defaultValue": "3000",
+                    "defaultValue": "30000",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 19,
@@ -1573,11 +1573,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-toast\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-toast\" [ngClass]=\"type\" *ngIf=\"visible\">\n      {{ message }}\n      <button class=\"asdf-toast-close\" (click)=\"dismiss()\">✖</button>\n    </div>\n  `,\n  styleUrls: [\"./toast.component.css\"],\n})\nexport class ToastComponent {\n  @Input() message: string = \"This is a toast message!\";\n  @Input() type: \"success\" | \"error\" | \"info\" = \"info\";\n  @Input() duration: number = 3000;\n\n  @Output() onDismiss = new EventEmitter<void>();\n\n  visible: boolean = true;\n\n  constructor() {\n    setTimeout(() => this.dismiss(), this.duration);\n  }\n\n  dismiss() {\n    this.visible = false;\n    this.onDismiss.emit();\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-toast\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-toast\" [ngClass]=\"type\" *ngIf=\"visible\">\n      {{ message }}\n      <button class=\"asdf-toast-close\" (click)=\"dismiss()\">✖</button>\n    </div>\n  `,\n  styleUrls: [\"./toast.component.css\"],\n})\nexport class ToastComponent {\n  @Input() message: string = \"This is a toast message!\";\n  @Input() type: \"success\" | \"error\" | \"info\" = \"info\";\n  @Input() duration: number = 30000;\n\n  @Output() onDismiss = new EventEmitter<void>();\n\n  visible: boolean = true;\n\n  constructor() {\n    setTimeout(() => this.dismiss(), this.duration);\n  }\n\n  dismiss() {\n    this.visible = false;\n    this.onDismiss.emit();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-toast {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  padding: 12px 16px;\n  border-radius: 6px;\n  font-size: 14px;\n  color: white;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);\n}\n\n.asdf-toast-close {\n  background: none;\n  border: none;\n  font-size: 16px;\n  color: white;\n  cursor: pointer;\n}\n\n.success {\n  background-color: #28a745;\n}\n\n.error {\n  background-color: #dc3545;\n}\n\n.info {\n  background-color: #17a2b8;\n}\n",
+                    "data": ".asdf-toast {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  padding: 12px 16px;\n  border-radius: 6px;\n  font-size: 14px;\n  color: white;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  box-shadow: 0px 4px 8px rgba(11, 12, 15, 0.2);\n}\n\n.asdf-toast-close {\n  background: none;\n  border: none;\n  font-size: 16px;\n  color: white;\n  cursor: pointer;\n}\n\n.success {\n  background-color: #28a745;\n}\n\n.error {\n  background-color: #dc3545;\n}\n\n.info {\n  background-color: #17a2b8;\n}\n",
                     "styleUrl": "./toast.component.css"
                 }
             ],
