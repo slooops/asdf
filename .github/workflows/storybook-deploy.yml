@@ -3,7 +3,7 @@ name: Deploy Storybook to GitHub Pages
 on:
   push:
     branches:
-      - main # Ensure this matches your Storybook branch
+      - main # Ensure it runs when pushing to main
 
 permissions:
   contents: write
@@ -31,5 +31,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
-          publish_branch: gh-pages
+          publish_branch: storybook-builds
           destination_dir: storybook-static
