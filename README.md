@@ -2,6 +2,8 @@
 
 `ng run angular-latest:storybook`. This should open `http://localhost:6006/`
 
+If you're on the Github pages readme, you should visit this link: `https://slooops.github.io/asdf/storybook-static/`
+
 # AngularLatest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
