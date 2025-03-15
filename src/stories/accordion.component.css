@@ -1,0 +1,28 @@
+.asdf-accordion {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.asdf-accordion-header {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  padding: 10px;
+  background: #f7f7f7;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.asdf-accordion-content {
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+.asdf-accordion-icon {
+  font-size: 14px;
+  padding-right: 5px;
+}
