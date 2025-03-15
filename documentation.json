@@ -15,6 +15,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": true,
                     "description": "",
                     "line": 2
@@ -24,6 +25,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": true,
                     "description": "",
                     "line": 4
@@ -33,6 +35,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": true,
                     "description": "",
                     "line": 3
@@ -57,6 +60,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 2
@@ -99,6 +103,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 26
@@ -109,6 +114,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 25
@@ -249,17 +255,18 @@
                         {
                             "pos": 837,
                             "end": 850,
+                            "kind": 327,
+                            "id": 0,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 334,
                             "tagName": {
                                 "pos": 838,
                                 "end": 846,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
                                 "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
                                 "escapedText": "required"
                             },
                             "comment": ""
@@ -470,7 +477,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".card,\n.container {\n  font-family: \"Inter\", sans-serif;\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  /* height: 200px; */\n  overflow: visible; /* Allow content overflow if needed */\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  margin-top: 0px;\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.card-subtitle {\n  font-size: 14px;\n  font-weight: 400;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
+                    "data": ".card,\n.container {\n  font-family: \"Inter\", sans-serif;\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  /* height: 200px; */\n  overflow: visible; /* Allow content overflow if needed */\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  margin-top: 0px;\n  font-size: 16px;\n  font-weight: 600;\n  color: #555e67;\n}\n\n.card-subtitle {\n  font-size: 14px;\n  font-weight: 400;\n  color: #555e67;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
                     "styleUrl": "./card.component.css"
                 }
             ],
@@ -505,7 +512,7 @@
         },
         {
             "name": "FormComponent",
-            "id": "component-FormComponent-a45291572c2b89504e3a18bb3d6fe0108aca14093caf3756be4d99596dec02a6bd794053460aa8c2d2419a20df892943d2a909a596399720971b796c0100d600",
+            "id": "component-FormComponent-67ee0e5f9c7ff10a5a48d371dd28bad93438bb681bbc4e88b7b9016a0d305fa05f5fd23e1f30c2770a0386662752c406893fc83bc301df1e636fe975396c84bc",
             "file": "src/stories/form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -517,11 +524,21 @@
                 "./form.css"
             ],
             "styles": [],
-            "template": "<asdf-card\n  [container]=\"true\"\n  title=\"Form Title\"\n  [showTitle]=\"true\"\n  [showSubtitle]=\"false\"\n  [showPlaceholder]=\"false\"\n>\n  <!-- Place your form fields inside the container -->\n  <form class=\"form-stack\" (submit)=\"onSubmit($event)\">\n    <div class=\"form-group\">\n      <label for=\"name\">Name</label>\n      <input id=\"name\" type=\"text\" class=\"form-control\" name=\"name\" />\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email</label>\n      <input id=\"email\" type=\"email\" class=\"form-control\" name=\"email\" />\n    </div>\n    <!--\n    <asdf-button>Cancel </asdf-button>\n\n    <asdf-button type=\"submit\" class=\"asdf-button asdf-button--secondary\">\n      Submit\n    </asdf-button> -->\n  </form>\n</asdf-card>\n",
+            "template": "<asdf-card\n  [container]=\"useContainer\"\n  title=\"Form Title\"\n  [showTitle]=\"true\"\n  [showSubtitle]=\"false\"\n  [showPlaceholder]=\"false\"\n>\n  <!-- Place your form fields inside the container -->\n  <form class=\"form-stack\" (submit)=\"onSubmit($event)\">\n    <div class=\"form-group\">\n      <label for=\"name\">Name</label>\n      <!-- <input id=\"name\" type=\"text\" class=\"form-control\" name=\"name\" /> -->\n      <asdf-input\n        id=\"name\"\n        type=\"text\"\n        [(value)]=\"formData.name\"\n        style=\"width: 40vw\"\n      ></asdf-input>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email</label>\n      <!-- <input id=\"email\" type=\"email\" class=\"form-control\" name=\"email\" /> -->\n      <asdf-input\n        id=\"email\"\n        type=\"email\"\n        [(value)]=\"formData.email\"\n        style=\"width: 40vw\"\n      ></asdf-input>\n    </div>\n\n    <div class=\"button-group\">\n      <asdf-button label=\"Cancel\" [tertiary]=\"true\"></asdf-button>\n      <asdf-button label=\"Confirm\" [primary]=\"true\"></asdf-button>\n    </div>\n  </form>\n</asdf-card>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "useContainer",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 53,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -530,9 +547,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 55
                 }
             ],
             "methodsClass": [
@@ -549,7 +567,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 60,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -582,16 +600,20 @@
                 {
                     "name": "ButtonComponent",
                     "type": "component"
+                },
+                {
+                    "name": "InputComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport { CardComponent } from \"./card.component\";\nimport { ButtonComponent } from \"./button.component\"; // Adjust the import path to your card component\n\n@Component({\n  selector: \"asdf-form\",\n  standalone: true,\n  imports: [CommonModule, CardComponent, ButtonComponent], // Import CardComponent for use\n  template: `\n    <asdf-card\n      [container]=\"true\"\n      title=\"Form Title\"\n      [showTitle]=\"true\"\n      [showSubtitle]=\"false\"\n      [showPlaceholder]=\"false\"\n    >\n      <!-- Place your form fields inside the container -->\n      <form class=\"form-stack\" (submit)=\"onSubmit($event)\">\n        <div class=\"form-group\">\n          <label for=\"name\">Name</label>\n          <input id=\"name\" type=\"text\" class=\"form-control\" name=\"name\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email</label>\n          <input id=\"email\" type=\"email\" class=\"form-control\" name=\"email\" />\n        </div>\n        <!-- \n        <asdf-button>Cancel </asdf-button>\n\n        <asdf-button type=\"submit\" class=\"asdf-button asdf-button--secondary\">\n          Submit\n        </asdf-button> -->\n      </form>\n    </asdf-card>\n  `,\n  styleUrls: [\"./form.css\"],\n})\nexport class FormComponent {\n  formData = {\n    name: \"\",\n    email: \"\",\n  };\n\n  onSubmit(event: Event): void {\n    event.preventDefault();\n    console.log(this.formData); // Handle form submission logic here\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport { CardComponent } from \"./card.component\";\nimport { ButtonComponent } from \"./button.component\";\nimport { InputComponent } from \"./input.component\";\n\n@Component({\n  selector: \"asdf-form\",\n  standalone: true,\n  imports: [CommonModule, CardComponent, ButtonComponent, InputComponent],\n  template: `\n    <asdf-card\n      [container]=\"useContainer\"\n      title=\"Form Title\"\n      [showTitle]=\"true\"\n      [showSubtitle]=\"false\"\n      [showPlaceholder]=\"false\"\n    >\n      <!-- Place your form fields inside the container -->\n      <form class=\"form-stack\" (submit)=\"onSubmit($event)\">\n        <div class=\"form-group\">\n          <label for=\"name\">Name</label>\n          <!-- <input id=\"name\" type=\"text\" class=\"form-control\" name=\"name\" /> -->\n          <asdf-input\n            id=\"name\"\n            type=\"text\"\n            [(value)]=\"formData.name\"\n            style=\"width: 40vw\"\n          ></asdf-input>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email</label>\n          <!-- <input id=\"email\" type=\"email\" class=\"form-control\" name=\"email\" /> -->\n          <asdf-input\n            id=\"email\"\n            type=\"email\"\n            [(value)]=\"formData.email\"\n            style=\"width: 40vw\"\n          ></asdf-input>\n        </div>\n\n        <div class=\"button-group\">\n          <asdf-button label=\"Cancel\" [tertiary]=\"true\"></asdf-button>\n          <asdf-button label=\"Confirm\" [primary]=\"true\"></asdf-button>\n        </div>\n      </form>\n    </asdf-card>\n  `,\n  styleUrls: [\"./form.css\"],\n})\nexport class FormComponent {\n  @Input() useContainer: boolean = true;\n\n  formData = {\n    name: \"\",\n    email: \"\",\n  };\n\n  onSubmit(event: Event): void {\n    event.preventDefault();\n    console.log(this.formData); // Handle form submission logic here\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".form-stack {\n  align-items: stretch;\n  display: flex;\n  flex: 1 1 0px;\n  flex-flow: column;\n  gap: 10px;\n  justify-content: flex-start;\n}\n\n.form-group {\n  align-items: center;\n  display: flex;\n  flex-direction: row; /* Arrange label and input horizontally */\n  gap: 10px; /* Add spacing between label and input */\n  justify-content: flex-start;\n}\n\n.form-control {\n  width: 60%; /* Adjust to your preferred input width */\n  flex-grow: 1;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 20px;\n  background-color: #fff;\n  color: #616161;\n  border: 1px solid #a1a1a1;\n  border-radius: 4px;\n}\n\nlabel {\n  font-size: 12px;\n  font-weight: 600;\n  color: #23282e;\n  margin: 0px;\n  line-height: 16px;\n  width: 40%; /* Adjust to your preferred label width */\n  text-align: left; /* Ensure label is left-aligned */\n}\n\nbutton {\n  margin-top: 15px;\n}\n",
+                    "data": ".form-stack {\n  align-items: stretch;\n  display: flex;\n  flex: 1 1 0px;\n  flex-flow: column;\n  gap: 10px;\n  justify-content: flex-start;\n}\n\n.form-group {\n  align-items: center;\n  display: flex;\n  flex-direction: row; /* Arrange label and input horizontally */\n  gap: 10px; /* Add spacing between label and input */\n  justify-content: space-between;\n  padding-right: 22px;\n}\n\n.button-group {\n  display: flex;\n  flex-direction: row;\n  gap: 10px;\n  justify-content: flex-end;\n}\n\nlabel {\n  font-size: 12px;\n  font-weight: 600;\n  color: #626d7d;\n  margin: 0px;\n  line-height: 16px;\n  width: 40%; /* Adjust to your preferred label width */\n  text-align: left; /* Ensure label is left-aligned */\n}\n\nbutton {\n  margin-top: 15px;\n}\n",
                     "styleUrl": "./form.css"
                 }
             ],
@@ -685,8 +707,147 @@
             "extends": []
         },
         {
+            "name": "InputComponent",
+            "id": "component-InputComponent-6cdc8b11a3f864fdbb628695543f294cb69f84be4c843edf7b04405ed35f67c99a906734ff2aaa116c2c25ed37e68571efca272b7b99635fda0ee8ae07e6ffd8",
+            "file": "src/stories/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-input",
+            "styleUrls": [
+                "./input.component.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"asdf-input-group\">\n  <label *ngIf=\"label\" [for]=\"id\">{{ label }}</label>\n  <input\n    [id]=\"id\"\n    [type]=\"type\"\n    [placeholder]=\"placeholder\"\n    [value]=\"value\"\n    [disabled]=\"disabled\"\n    (input)=\"onInput($event)\"\n    class=\"asdf-input\"\n  />\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "\"text\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onInput",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\n@Component({\n  selector: \"asdf-input\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-input-group\">\n      <label *ngIf=\"label\" [for]=\"id\">{{ label }}</label>\n      <input\n        [id]=\"id\"\n        [type]=\"type\"\n        [placeholder]=\"placeholder\"\n        [value]=\"value\"\n        [disabled]=\"disabled\"\n        (input)=\"onInput($event)\"\n        class=\"asdf-input\"\n      />\n    </div>\n  `,\n  styleUrls: [\"./input.component.css\"],\n})\nexport class InputComponent {\n  @Input() id: string = \"\";\n  @Input() label?: string;\n  @Input() type: string = \"text\";\n  @Input() placeholder: string = \"\";\n  @Input() value: string = \"\";\n  @Input() disabled: boolean = false;\n\n  @Output() valueChange = new EventEmitter<string>();\n\n  onInput(event: Event) {\n    const inputElement = event.target as HTMLInputElement;\n    this.valueChange.emit(inputElement.value);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".asdf-input-group {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  width: 100%;\n}\n\n.asdf-input-group label {\n  font-size: 12px;\n  font-weight: 600;\n  color: #626d7d;\n  text-align: left;\n}\n\n.asdf-input {\n  width: 100%;\n  flex-grow: 1;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 20px;\n  background-color: #fff;\n  color: #616161;\n  border: 1px solid #bcbcbc;\n  border-radius: 4px;\n  transition: box-shadow 0.3s ease;\n}\n\n.form-control {\n  width: 60%; /* Adjust to your preferred input width */\n  flex-grow: 1;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 20px;\n  background-color: #fff;\n  color: #616161;\n  border: 1px solid #bcbcbc;\n  border-radius: 4px;\n}\n\n.asdf-input:hover {\n  box-shadow: 0 0 2rem 0.2rem rgba(228, 228, 228, 0.25);\n}\n\n.asdf-input:focus {\n  outline: none;\n  border-color: #bbbbbb;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n\nlabel {\n  font-size: 12px;\n  font-weight: 600;\n  color: #626d7d;\n  margin: 0px;\n  line-height: 16px;\n  width: 40%; /* Adjust to your preferred label width */\n  text-align: left; /* Ensure label is left-aligned */\n}\n",
+                    "styleUrl": "./input.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "ModalComponent",
-            "id": "component-ModalComponent-41c8260c593e7f2661581a2219f7ed5b50564a129203b9a03e6d19910862b3fac83a9d29f667fcfd2f911e4d34a8fa7eef7da530667d4802a78e64b2cd4b826f",
+            "id": "component-ModalComponent-fa6049f7072552d0653981ee37b8e08c62ddf031ce4ec8d5129f82783d3cec1fb7eb569b6d1652c7f7be656c41492ded1a6dfba87fad3af2b3307d5132d6bd2d",
             "file": "src/stories/modal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -698,7 +859,7 @@
                 "./modal.component.css"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n<div class=\"asdf-modal\" *ngIf=\"isOpen\">\n  <div class=\"asdf-modal-header\">\n    <h3>{{ title }}</h3>\n    <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n  </div>\n  <div class=\"asdf-modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n    <asdf-button\n      label=\"Cancel\"\n      type=\"secondary\"\n      (click)=\"close()\"\n    ></asdf-button>\n    <asdf-button\n      label=\"Confirm\"\n      type=\"primary\"\n      (click)=\"confirm()\"\n    ></asdf-button>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n<div class=\"asdf-modal\" *ngIf=\"isOpen\">\n  <div class=\"asdf-modal-header\">\n    <h3>{{ title }}</h3>\n    <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n  </div>\n  <div class=\"asdf-modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n    <asdf-button\n      label=\"Cancel\"\n      [primary]=\"false\"\n      (click)=\"close()\"\n    ></asdf-button>\n    <asdf-button\n      label=\"Confirm\"\n      [primary]=\"true\"\n      (click)=\"confirm()\"\n    ></asdf-button>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -790,11 +951,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { ButtonComponent } from \"./button.component\";\n\n@Component({\n  selector: \"asdf-modal\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `\n    <div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n    <div class=\"asdf-modal\" *ngIf=\"isOpen\">\n      <div class=\"asdf-modal-header\">\n        <h3>{{ title }}</h3>\n        <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n      </div>\n      <div class=\"asdf-modal-body\">\n        <ng-content></ng-content>\n      </div>\n      <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n        <asdf-button\n          label=\"Cancel\"\n          type=\"secondary\"\n          (click)=\"close()\"\n        ></asdf-button>\n        <asdf-button\n          label=\"Confirm\"\n          type=\"primary\"\n          (click)=\"confirm()\"\n        ></asdf-button>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./modal.component.css\"],\n})\nexport class ModalComponent {\n  @Input() title: string = \"Modal Title\";\n  @Input() isOpen: boolean = false;\n  @Input() showActions: boolean = true;\n  @Output() closeModal = new EventEmitter<void>();\n  @Output() confirmAction = new EventEmitter<void>();\n\n  close() {\n    this.closeModal.emit();\n  }\n\n  confirm() {\n    this.confirmAction.emit();\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\nimport { ButtonComponent } from \"./button.component\";\n\n@Component({\n  selector: \"asdf-modal\",\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `\n    <div class=\"asdf-modal-backdrop\" *ngIf=\"isOpen\" (click)=\"close()\"></div>\n    <div class=\"asdf-modal\" *ngIf=\"isOpen\">\n      <div class=\"asdf-modal-header\">\n        <h3>{{ title }}</h3>\n        <button class=\"asdf-modal-close\" (click)=\"close()\">✖</button>\n      </div>\n      <div class=\"asdf-modal-body\">\n        <ng-content></ng-content>\n      </div>\n      <div class=\"asdf-modal-footer\" *ngIf=\"showActions\">\n        <asdf-button\n          label=\"Cancel\"\n          [primary]=\"false\"\n          (click)=\"close()\"\n        ></asdf-button>\n        <asdf-button\n          label=\"Confirm\"\n          [primary]=\"true\"\n          (click)=\"confirm()\"\n        ></asdf-button>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./modal.component.css\"],\n})\nexport class ModalComponent {\n  @Input() title: string = \"Modal Title\";\n  @Input() isOpen: boolean = false;\n  @Input() showActions: boolean = true;\n  @Output() closeModal = new EventEmitter<void>();\n  @Output() confirmAction = new EventEmitter<void>();\n\n  close() {\n    this.closeModal.emit();\n  }\n\n  confirm() {\n    this.confirmAction.emit();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  font-family: \"Inter\", sans-serif;\n}\n\n.asdf-modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: radial-gradient(\n    circle,\n    rgba(0, 0, 0, 0.5) 10%,\n    rgba(0, 0, 0, 0.25) 50%,\n    rgba(255, 255, 255, 0.1) 90%\n  );\n  z-index: 1000;\n}\n\n.asdf-modal {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: white;\n  padding: 20px;\n  width: 400px;\n  border-radius: 8px;\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);\n  z-index: 1001;\n}\n\n.asdf-modal-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid #e1e4e8;\n  padding-bottom: 10px;\n}\n\n.asdf-modal-close {\n  background: none;\n  border: none;\n  font-size: 16px;\n  cursor: pointer;\n}\n\n.asdf-modal-body {\n  margin: 15px 0;\n}\n\n.asdf-modal-footer {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n}\n",
+                    "data": ":host {\n  font-family: \"Inter\", sans-serif;\n}\n\n.asdf-modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: radial-gradient(\n    circle,\n    rgba(160, 160, 160, 0.5) 10%,\n    rgba(201, 201, 201, 0.25) 50%,\n    rgba(255, 255, 255, 0.1) 90%\n  );\n  z-index: 1000;\n}\n\n.asdf-modal {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: white;\n  padding: 16px 20px;\n  width: 400px;\n  border-radius: 8px;\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);\n  z-index: 1001;\n}\n\n.asdf-modal-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid #e1e4e8;\n  padding-bottom: 10px;\n}\n\nh3 {\n  margin: 10px 0;\n}\n\n.asdf-modal-close {\n  background: none;\n  border: none;\n  font-size: 16px;\n  cursor: pointer;\n}\n\n.asdf-modal-body {\n  margin: 15px 0;\n}\n\n.asdf-modal-footer {\n  display: flex;\n  justify-content: flex-end;\n  gap: 10px;\n}\n",
                     "styleUrl": "./modal.component.css"
                 }
             ],
@@ -828,6 +989,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "User | null",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 69
@@ -1220,7 +1382,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 18,
+        "count": 17,
         "status": "low",
         "files": [
             {
@@ -1275,7 +1437,7 @@
                 "linktype": "component",
                 "name": "FormComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1285,6 +1447,15 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

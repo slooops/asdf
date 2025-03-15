@@ -1,0 +1,58 @@
+.asdf-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.asdf-input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #626d7d;
+  text-align: left;
+}
+
+.asdf-input {
+  width: 100%;
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #616161;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-control {
+  width: 60%; /* Adjust to your preferred input width */
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #616161;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+}
+
+.asdf-input:hover {
+  box-shadow: 0 0 2rem 0.2rem rgba(228, 228, 228, 0.25);
+}
+
+.asdf-input:focus {
+  outline: none;
+  border-color: #bbbbbb;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #626d7d;
+  margin: 0px;
+  line-height: 16px;
+  width: 40%; /* Adjust to your preferred label width */
+  text-align: left; /* Ensure label is left-aligned */
+}

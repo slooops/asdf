@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/angular";
+const isProduction = process.env.NODE_ENV === "production";
 
 const config: StorybookConfig = {
   stories: ["../src/stories/**/*.stories.ts"], // Updated to match your file structure
@@ -13,10 +14,14 @@ const config: StorybookConfig = {
     name: "@storybook/angular",
     options: {},
   },
-  staticDirs: ["../public"], // Ensure static files load properly
-  managerHead: (head) => `
-    ${head}
-    <base href="/asdf/storybook-static/">
-  `,
+  staticDirs: ["../public"],
+
+  managerHead: (head) =>
+    isProduction
+      ? `
+        ${head}
+        <base href="/asdf/storybook-static/">
+      `
+      : head, // Keep local Storybook working
 };
 export default config;

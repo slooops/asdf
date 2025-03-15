@@ -12,25 +12,21 @@
   display: flex;
   flex-direction: row; /* Arrange label and input horizontally */
   gap: 10px; /* Add spacing between label and input */
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding-right: 22px;
 }
 
-.form-control {
-  width: 60%; /* Adjust to your preferred input width */
-  flex-grow: 1;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 20px;
-  background-color: #fff;
-  color: #616161;
-  border: 1px solid #a1a1a1;
-  border-radius: 4px;
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
 label {
   font-size: 12px;
   font-weight: 600;
-  color: #23282e;
+  color: #626d7d;
   margin: 0px;
   line-height: 16px;
   width: 40%; /* Adjust to your preferred label width */

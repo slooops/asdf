@@ -19,12 +19,12 @@ import { ButtonComponent } from "./button.component";
       <div class="asdf-modal-footer" *ngIf="showActions">
         <asdf-button
           label="Cancel"
-          type="secondary"
+          [primary]="false"
           (click)="close()"
         ></asdf-button>
         <asdf-button
           label="Confirm"
-          type="primary"
+          [primary]="true"
           (click)="confirm()"
         ></asdf-button>
       </div>
