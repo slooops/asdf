@@ -3,7 +3,7 @@ name: Deploy Storybook to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this to the branch where Storybook is updated
+      - main # Ensure this matches your Storybook branch
 
 permissions:
   contents: write
