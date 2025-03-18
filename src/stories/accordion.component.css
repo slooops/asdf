@@ -7,13 +7,15 @@
 .asdf-accordion-header {
   width: 100%;
   text-align: left;
-  font-weight: 600;
   padding: 10px;
-  background: #f7f7f7;
+  background: #f6f9fc;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+
+  font-weight: 600;
+  color: #555e67;
 }
 
 .asdf-accordion-content {
