@@ -80,7 +80,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-cdafe397ae6a5f303b87bff57769ece5f0a7b431295f7847728defc7cadd7c12d87035e0b5647d0dea190e132f2d11a1f2afb8f73b4d83122349e6802d79a9f7",
+            "id": "component-AccordionComponent-69926db3983fa3fc633fe29831900bbea68c61cd2b54f41e465143d865c2574662d8216a080b0ab6bae078ea3db6edf2e072c00d4b71bd442af39541e6ac171d",
             "file": "src/stories/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                 "./accordion.component.css"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-accordion\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <span class=\"asdf-accordion-icon\">{{ open ? \"▿\" : \"▹\" }}</span>\n  </button>\n  <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n    <ng-content></ng-content>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-accordion\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <i class=\"{{ open ? 'ph-caret-down' : 'ph-caret-right' }}\"></i>\n  </button>\n\n  <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n    <ng-content></ng-content>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -102,7 +102,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -111,7 +111,7 @@
                     "defaultValue": "\"Accordion Title\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 }
@@ -125,7 +125,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -144,11 +144,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <span class=\"asdf-accordion-icon\">{{ open ? \"▿\" : \"▹\" }}</span>\n      </button>\n      <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <i class=\"{{ open ? 'ph-caret-down' : 'ph-caret-right' }}\"></i>\n      </button>\n\n      <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-accordion {\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  font-weight: 600;\n  padding: 10px;\n  background: #f7f7f7;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n}\n\n.asdf-accordion-content {\n  padding: 10px;\n  background: white;\n  border-top: 1px solid #ccc;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n",
+                    "data": ".asdf-accordion {\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  padding: 10px;\n  background: #f6f9fc;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n\n  font-weight: 600;\n  color: #555e67;\n}\n\n.asdf-accordion-content {\n  padding: 10px;\n  background: white;\n  border-top: 1px solid #ccc;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n",
                     "styleUrl": "./accordion.component.css"
                 }
             ],
@@ -293,6 +293,63 @@
                     }
                 }
             }
+        },
+        {
+            "name": "BreadcrumbComponent",
+            "id": "component-BreadcrumbComponent-82c704ae0a235f7d06c662798dc0fa16ab0ac900bbe461127d9ca0a1518c4ca925c2a8457fcde3c9e6448318ca4818ae3480fb281df6717c76b5c1dfb0535396",
+            "file": "src/stories/breadcrumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-breadcrumb",
+            "styleUrls": [
+                "./breadcrumb.component.css"
+            ],
+            "styles": [],
+            "template": "<nav class=\"asdf-breadcrumb\" aria-label=\"Breadcrumb\">\n  <ol class=\"asdf-breadcrumb-list\">\n    <li\n      class=\"asdf-breadcrumb-item\"\n      *ngFor=\"let crumb of breadcrumbs; let last = last\"\n    >\n      <ng-container *ngIf=\"!last; else lastCrumb\">\n        <a [href]=\"crumb.link\" class=\"asdf-breadcrumb-link\">{{\n          crumb.label\n        }}</a>\n        <span class=\"asdf-breadcrumb-separator\">›</span>\n      </ng-container>\n      <ng-template #lastCrumb>\n        <span class=\"asdf-breadcrumb-current\">{{ crumb.label }}</span>\n      </ng-template>\n    </li>\n  </ol>\n</nav>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "breadcrumbs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-breadcrumb\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <nav class=\"asdf-breadcrumb\" aria-label=\"Breadcrumb\">\n      <ol class=\"asdf-breadcrumb-list\">\n        <li\n          class=\"asdf-breadcrumb-item\"\n          *ngFor=\"let crumb of breadcrumbs; let last = last\"\n        >\n          <ng-container *ngIf=\"!last; else lastCrumb\">\n            <a [href]=\"crumb.link\" class=\"asdf-breadcrumb-link\">{{\n              crumb.label\n            }}</a>\n            <span class=\"asdf-breadcrumb-separator\">›</span>\n          </ng-container>\n          <ng-template #lastCrumb>\n            <span class=\"asdf-breadcrumb-current\">{{ crumb.label }}</span>\n          </ng-template>\n        </li>\n      </ol>\n    </nav>\n  `,\n  styleUrls: [\"./breadcrumb.component.css\"],\n})\nexport class BreadcrumbComponent {\n  @Input() breadcrumbs: { label: string; link: string }[] = [];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".asdf-breadcrumb {\n  font-family: \"Inter\", sans-serif;\n  font-size: 14px;\n  color: #555e67;\n  display: block;\n}\n\n.asdf-breadcrumb-list {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  align-items: center;\n}\n\n.asdf-breadcrumb-item {\n  display: flex;\n  align-items: center;\n}\n\n.asdf-breadcrumb-link {\n  color: #049fd9;\n  text-decoration: none;\n}\n\n.asdf-breadcrumb-link:hover {\n  text-decoration: underline;\n}\n\n.asdf-breadcrumb-separator {\n  margin: 0 6px;\n  color: #999;\n}\n\n.asdf-breadcrumb-current {\n  font-weight: 600;\n  color: #373c42;\n}\n",
+                    "styleUrl": "./breadcrumb.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "ButtonComponent",
@@ -585,6 +642,252 @@
                     }
                 ]
             },
+            "extends": []
+        },
+        {
+            "name": "DropdownComponent",
+            "id": "component-DropdownComponent-64d341d37d53796ff08a5516e9f13bc479571c22b390a6e3ea81a0123b57d746b58e94cdede26c1f463f04ca50f4179d5b6520c4dbc56dcd127e20f2fc4e2129",
+            "file": "src/stories/dropdown.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-dropdown",
+            "styleUrls": [
+                "./dropdown.component.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n  <button class=\"asdf-dropdown-trigger\" (click)=\"toggleDropdown()\">\n    {{ selectedLabel || placeholder }}\n    <i class=\"ph-caret-down\"></i>\n  </button>\n\n  <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n    <li\n      *ngFor=\"let item of items; let i = index\"\n      (click)=\"selectItem(item)\"\n      [class.selected]=\"item === selectedItem\"\n      [attr.tabindex]=\"0\"\n      (keydown)=\"onKeydown($event, i)\"\n    >\n      {{ item.label }}\n    </li>\n  </ul>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "\"Select an option\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectionChange",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                },
+                {
+                    "name": "selectedItem",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "selectedLabel",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeDropdown",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'document:click', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onKeydown",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "KeyboardEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "KeyboardEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "selectItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "literal type",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "literal type",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleDropdown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "document:click",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 57
+                }
+            ],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n  Component,\n  Input,\n  Output,\n  EventEmitter,\n  HostListener,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-dropdown\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n      <button class=\"asdf-dropdown-trigger\" (click)=\"toggleDropdown()\">\n        {{ selectedLabel || placeholder }}\n        <i class=\"ph-caret-down\"></i>\n      </button>\n\n      <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n        <li\n          *ngFor=\"let item of items; let i = index\"\n          (click)=\"selectItem(item)\"\n          [class.selected]=\"item === selectedItem\"\n          [attr.tabindex]=\"0\"\n          (keydown)=\"onKeydown($event, i)\"\n        >\n          {{ item.label }}\n        </li>\n      </ul>\n    </div>\n  `,\n  styleUrls: [\"./dropdown.component.css\"],\n})\nexport class DropdownComponent {\n  @Input() items: { label: string; value: any }[] = [];\n  @Input() placeholder: string = \"Select an option\";\n  @Output() selectionChange = new EventEmitter<any>();\n\n  isOpen = false;\n  selectedItem: any = null;\n  selectedLabel: string = \"\";\n\n  toggleDropdown() {\n    this.isOpen = !this.isOpen;\n  }\n\n  selectItem(item: { label: string; value: any }) {\n    this.selectedItem = item.value;\n    this.selectedLabel = item.label;\n    this.isOpen = false;\n    this.selectionChange.emit(item.value);\n  }\n\n  @HostListener(\"document:click\", [\"$event\"])\n  closeDropdown(event: Event) {\n    if (!(event.target as HTMLElement).closest(\".asdf-dropdown\")) {\n      this.isOpen = false;\n    }\n  }\n\n  onKeydown(event: KeyboardEvent, index: number) {\n    const listLength = this.items.length;\n    const parent = (event.target as HTMLElement).parentElement;\n\n    if (!parent) return;\n\n    if (event.key === \"ArrowDown\") {\n      const nextIndex = (index + 1) % listLength;\n      (parent.children[nextIndex] as HTMLElement).focus();\n    } else if (event.key === \"ArrowUp\") {\n      const prevIndex = (index - 1 + listLength) % listLength;\n      (parent.children[prevIndex] as HTMLElement).focus();\n    } else if (event.key === \"Enter\") {\n      this.selectItem(this.items[index]);\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".asdf-dropdown {\n  position: relative;\n  display: inline-block;\n  font-family: \"Inter\", sans-serif;\n}\n\n.asdf-dropdown-trigger {\n  background-color: #049fd9;\n  color: white;\n  font-weight: bold;\n  padding: 8px 12px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\n.asdf-dropdown-trigger:hover {\n  background-color: #005c85;\n}\n\n.asdf-dropdown-menu {\n  position: absolute;\n  left: 0;\n  top: 100%;\n  background: white;\n  border: 1px solid #ddd;\n  border-radius: 6px;\n  width: 180px;\n  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);\n  z-index: 10;\n  padding: 8px 0;\n  list-style: none;\n  margin: 0;\n}\n\n.asdf-dropdown-menu li {\n  padding: 8px 12px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n}\n\n.asdf-dropdown-menu li:hover,\n.asdf-dropdown-menu li.selected {\n  background: #f0f0f0;\n}\n\n.asdf-dropdown.open .asdf-dropdown-menu {\n  display: block;\n}\n",
+                    "styleUrl": "./dropdown.component.css"
+                }
+            ],
+            "stylesData": "",
             "extends": []
         },
         {
@@ -1667,7 +1970,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 14,
+        "count": 13,
         "status": "low",
         "files": [
             {
@@ -1708,6 +2011,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/breadcrumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1723,6 +2035,15 @@
                 "name": "CardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dropdown.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DropdownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {

@@ -15,7 +15,9 @@ import {
     <div class="asdf-dropdown" [class.open]="isOpen">
       <button class="asdf-dropdown-trigger" (click)="toggleDropdown()">
         {{ selectedLabel || placeholder }}
+        <i class="ph-caret-down"></i>
       </button>
+
       <ul class="asdf-dropdown-menu" *ngIf="isOpen">
         <li
           *ngFor="let item of items; let i = index"

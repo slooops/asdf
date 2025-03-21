@@ -9,8 +9,9 @@ import { Component, Input } from "@angular/core";
     <div class="asdf-accordion">
       <button class="asdf-accordion-header" (click)="toggleAccordion()">
         {{ title }}
-        <span class="asdf-accordion-icon">{{ open ? "▿" : "▹" }}</span>
+        <i class="{{ open ? 'ph-caret-down' : 'ph-caret-right' }}"></i>
       </button>
+
       <div class="asdf-accordion-content" *ngIf="open">
         <ng-content></ng-content>
       </div>

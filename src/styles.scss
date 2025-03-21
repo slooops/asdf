@@ -11,42 +11,186 @@ $font-family: "Inter", sans-serif;
   font-family: $font-family;
 }
 
-// .asdf-button {
-//     font-family: $font-family;
-//     font-weight: 600;
-//     border-radius: $border-radius;
-//     border: 1px solid transparent;
-//     padding: 5px 10px;
-//     cursor: pointer;
-//     transition: all 0.3s ease;
+body {
+  font-family: $font-family;
+  color: #333;
+  background-color: #f8f9fa;
+}
 
-//   &--primary {
-//     background-color: $primary-color;
-//     color: white;
-//   }
+// 🎨 Color Variables
+$primary-color: #049fd9;
+$secondary-color: #555e67;
+$light-grey: #e1e4e8;
+$dark-grey: #373c42;
+$border-color: #bcbcbc;
+$bg-light: #f7f7f7;
+$bg-white: #ffffff;
 
-//   &--secondary {
-//     background-color: white;
-//     color: $primary-color;
-//     border: 1px solid $secondary-color;
-//   }
+// 🔠 Typography Styles
+.text-xs {
+  font-size: 12px;
+  font-weight: 400;
+}
 
-//   &--tertiary {
-//     background-color: transparent;
-//     color: $tertiary-color;
-//     text-decoration: underline;
-//   }
-// }
+.text-sm {
+  font-size: 14px;
+  font-weight: 400;
+}
 
-.card-title {
-  margin-top: 0px;
+.text-md {
   font-size: 16px;
   font-weight: 600;
-  color: #555e67;
+}
+
+.text-lg {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: $secondary-color;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+// 🏗️ Container & Card Styles
+.container {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px #00000014;
+  background-color: $bg-white;
+  padding: 16px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  background-color: $bg-white;
+  border: 2px solid $light-grey;
+  border-radius: 8px;
+  transition: all linear 0.5s;
+  width: auto;
+  overflow: visible;
+  padding: 16px;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+.card-title {
+  @extend .text-md;
+  color: $secondary-color;
 }
 
 .card-subtitle {
-  font-size: 14px;
-  font-weight: 400;
-  color: #555e67;
+  @extend .text-sm;
+  color: $secondary-color;
+}
+
+.card-placeholder {
+  background-color: $bg-light;
+  height: 150px;
+  cursor: pointer;
+}
+
+.card-content {
+  background-color: $bg-white;
+  height: fit-content;
+  cursor: pointer;
+}
+
+// 🔲 Button Styles
+.button {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $dark-grey;
+    border: 1px solid $light-grey;
+
+    &:hover {
+      background-color: rgba(239, 239, 239, 0.1);
+    }
+  }
+
+  &--tertiary {
+    background-color: transparent;
+    color: $dark-grey;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// 🎭 Modal Backdrop - Now More Diffuse
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+// 🔄 Utility Classes
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+.gap-lg {
+  gap: 24px;
 }
