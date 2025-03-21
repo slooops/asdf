@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.text-xs {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.text-sm, .card-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.text-md, .card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: #555e67;
+}
+
+.text-primary {
+  color: #049fd9;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.container {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.0784313725);
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  border: 2px solid #e1e4e8;
+  border-radius: 8px;
+  transition: all linear 0.5s;
+  width: auto;
+  overflow: visible;
+  padding: 16px;
+}
+.card:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  color: #555e67;
+}
+
+.card-subtitle {
+  color: #555e67;
+}
+
+.card-placeholder {
+  background-color: #f7f7f7;
+  height: 150px;
+  cursor: pointer;
+}
+
+.card-content {
+  background-color: #ffffff;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.button {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+.button--primary {
+  background-color: #049fd9;
+  color: white;
+}
+.button--primary:hover {
+  background-color: #037aa7;
+}
+.button--secondary {
+  background-color: transparent;
+  color: #373c42;
+  border: 1px solid #e1e4e8;
+}
+.button--secondary:hover {
+  background-color: rgba(239, 239, 239, 0.1);
+}
+.button--tertiary {
+  background-color: transparent;
+  color: #373c42;
+}
+.button--tertiary:hover {
+  color: #037aa7;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.flex, .flex-column, .flex-center {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+.gap-lg {
+  gap: 24px;
+}
