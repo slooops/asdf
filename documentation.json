@@ -80,7 +80,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-69926db3983fa3fc633fe29831900bbea68c61cd2b54f41e465143d865c2574662d8216a080b0ab6bae078ea3db6edf2e072c00d4b71bd442af39541e6ac171d",
+            "id": "component-AccordionComponent-a7508afe0334b11ee9e10ff9dd84547dd3471da9a7ff72ffbfb3630e5cca0e11e97acd26f8a7c995d67634281523499e514dbe0cedb63bee748dfcf72f300f5a",
             "file": "src/stories/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,17 +92,35 @@
                 "./accordion.component.css"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-accordion\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <i class=\"{{ open ? 'ph-caret-down' : 'ph-caret-right' }}\"></i>\n  </button>\n\n  <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n    <ng-content></ng-content>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n  </button>\n\n  <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n    <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n      <ng-content></ng-content>\n\n      <!-- Optional placeholder -->\n      <div\n        *ngIf=\"showPlaceholder\"\n        class=\"placeholder-well\"\n        (mousemove)=\"updateCoords($event)\"\n      ></div>\n    </div>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "borderless",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "open",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showPlaceholder",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -111,7 +129,7 @@
                     "defaultValue": "\"Accordion Title\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 }
@@ -125,9 +143,37 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "updateCoords",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -144,11 +190,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <i class=\"{{ open ? 'ph-caret-down' : 'ph-caret-right' }}\"></i>\n      </button>\n\n      <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n      </button>\n\n      <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n        <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n          <ng-content></ng-content>\n\n          <!-- Optional placeholder -->\n          <div\n            *ngIf=\"showPlaceholder\"\n            class=\"placeholder-well\"\n            (mousemove)=\"updateCoords($event)\"\n          ></div>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n  @Input() borderless: boolean = false;\n  @Input() showPlaceholder: boolean = true;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n  updateCoords(event: MouseEvent) {\n    const target = event.target as HTMLElement;\n    target.style.setProperty(\"--x\", `${event.offsetX}px`);\n    target.style.setProperty(\"--y\", `${event.offsetY}px`);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-accordion {\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  padding: 10px;\n  background: #f6f9fc;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n\n  font-weight: 600;\n  color: #555e67;\n}\n\n.asdf-accordion-content {\n  padding: 10px;\n  background: white;\n  border-top: 1px solid #ccc;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n",
+                    "data": ".asdf-accordion {\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.asdf-accordion:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.001);\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  padding: 10px;\n  background: #fff;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n\n  font-weight: 600;\n  color: #555e67;\n}\n\n.asdf-accordion.borderless {\n  border: none;\n  padding: 0;\n}\n\n.asdf-accordion-content {\n  padding: 16px;\n  background: white;\n  border-top: 2px solid #e1e4e8;\n}\n\n.asdf-accordion-wrapper {\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.3s ease, padding 0.3s ease;\n}\n\n.asdf-accordion-wrapper.open {\n  max-height: 500px;\n  padding-top: 8px;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n\n.placeholder-well {\n  position: relative;\n  background-color: #f7f7f7;\n  height: 150px;\n  overflow: hidden;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: var(--y, 0);\n    left: var(--x, 0);\n    transform: translate(-50%, -50%);\n    width: 200px;\n    height: 200px;\n    background: radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.75) 0%,\n      transparent 80%\n    );\n    pointer-events: none;\n    transition: opacity 0.2s ease;\n    opacity: 0;\n  }\n\n  &:hover:after {\n    opacity: 1;\n  }\n}\n",
                     "styleUrl": "./accordion.component.css"
                 }
             ],
@@ -611,7 +657,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".card,\n.container {\n  font-family: \"Inter\", sans-serif;\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  /* height: 200px; */\n  overflow: visible; /* Allow content overflow if needed */\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  margin-top: 0px;\n  font-size: 16px;\n  font-weight: 600;\n  color: #555e67;\n}\n\n.card-subtitle {\n  font-size: 14px;\n  font-weight: 400;\n  color: #555e67;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
+                    "data": ".card,\n.container {\n  font-family: \"Inter\", sans-serif;\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  /* height: 200px; */\n  overflow: visible; /* Allow content overflow if needed */\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  margin-top: 0px;\n  font-size: 16px;\n  font-weight: 600;\n  color: #555e67;\n}\n\n.card-subtitle {\n  font-size: 14px;\n  font-weight: 400;\n  color: #555e67;\n}\n\n.card-title-stack {\n  padding: 0 0 10px 0;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
                     "styleUrl": "./card.component.css"
                 }
             ],
@@ -1998,7 +2044,7 @@
                 "linktype": "component",
                 "name": "AccordionComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

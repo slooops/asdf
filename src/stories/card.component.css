@@ -30,6 +30,10 @@
   color: #555e67;
 }
 
+.card-title-stack {
+  padding: 0 0 10px 0;
+}
+
 .card-placeholder {
   background-color: #f7f7f7;
   height: 150px;

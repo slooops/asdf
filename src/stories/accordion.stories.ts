@@ -8,18 +8,55 @@ const meta: Meta<AccordionComponent> = {
   argTypes: {
     title: { control: "text" },
     open: { control: "boolean" },
+    borderless: { control: "boolean" },
+    showPlaceholder: { control: "boolean" },
   },
   args: {
     title: "Accordion Title",
-    open: false,
+    open: true,
+    borderless: false,
+    showPlaceholder: true,
   },
 };
 
 export default meta;
 type Story = StoryObj<AccordionComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <asdf-accordion
+        [title]="title"
+        [open]="open"
+        [borderless]="borderless"
+        [showPlaceholder]="showPlaceholder"
+      >
+      </asdf-accordion>
+    `,
+  }),
+};
 
-export const OpenByDefault: Story = {
-  args: { open: true },
+export const Closed: Story = {
+  args: {
+    open: false,
+    showPlaceholder: true,
+    title: "This Accordion is Closed",
+  },
+};
+
+export const NoPlaceholder: Story = {
+  args: {
+    open: true,
+    showPlaceholder: false,
+    title: "No Placeholder",
+  },
+};
+
+export const Borderless: Story = {
+  args: {
+    open: true,
+    borderless: true,
+    title: "Be free! Go Borderless!",
+  },
 };
