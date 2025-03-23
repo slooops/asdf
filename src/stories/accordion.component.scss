@@ -17,9 +17,6 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-
-  font-weight: 600;
-  color: #555e67;
 }
 
 .asdf-accordion.borderless {
@@ -36,7 +33,7 @@
 .asdf-accordion-wrapper {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.7s ease, padding 0.3s ease;
 }
 
 .asdf-accordion-wrapper.open {
@@ -45,7 +42,6 @@
 }
 
 .asdf-accordion-icon {
-  font-size: 14px;
   padding-right: 5px;
 }
 
@@ -69,7 +65,7 @@
       transparent 80%
     );
     pointer-events: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.5s ease;
     opacity: 0;
   }
 

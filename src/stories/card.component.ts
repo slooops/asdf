@@ -11,8 +11,8 @@ import { Router } from "@angular/router";
       <div class="card-stack">
         <div class="card-title-stack">
           <!-- Conditional Rendering of Title and Subtitle -->
-          <p class="card-title" *ngIf="showTitle">{{ title }}</p>
-          <p class="card-subtitle" *ngIf="showSubtitle">{{ subtitle }}</p>
+          <p class="text-md text-muted" *ngIf="showTitle">{{ title }}</p>
+          <p class="text-sm text-muted" *ngIf="showSubtitle">{{ subtitle }}</p>
         </div>
 
         <!-- Single div with dynamic class -->
@@ -25,7 +25,7 @@ import { Router } from "@angular/router";
       </div>
     </div>
   `,
-  styleUrls: ["./card.component.css"],
+  styleUrls: ["./card.component.scss"],
 })
 export class CardComponent {
   @Input() title: string = "";

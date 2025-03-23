@@ -80,7 +80,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-a7508afe0334b11ee9e10ff9dd84547dd3471da9a7ff72ffbfb3630e5cca0e11e97acd26f8a7c995d67634281523499e514dbe0cedb63bee748dfcf72f300f5a",
+            "id": "component-AccordionComponent-04afddc207521dbcd3020ca7afca2e188c6d33241a0ad70ea8199a47615aa680133f326de3e1a3b3ca46f4bdfcdda415642679036a498adca1725f34a971e15e",
             "file": "src/stories/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -89,10 +89,10 @@
             "providers": [],
             "selector": "asdf-accordion",
             "styleUrls": [
-                "./accordion.component.css"
+                "./accordion.component.scss"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n  <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n    {{ title }}\n    <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n  </button>\n\n  <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n    <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n      <ng-content></ng-content>\n\n      <!-- Optional placeholder -->\n      <div\n        *ngIf=\"showPlaceholder\"\n        class=\"placeholder-well\"\n        (mousemove)=\"updateCoords($event)\"\n      ></div>\n    </div>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n  <button\n    class=\"asdf-accordion-header text-md text-muted\"\n    (click)=\"toggleAccordion()\"\n  >\n    {{ title }}\n    <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n  </button>\n\n  <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n    <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n      <ng-content></ng-content>\n\n      <!-- Optional placeholder -->\n      <div\n        *ngIf=\"showPlaceholder\"\n        class=\"placeholder-well\"\n        (mousemove)=\"updateCoords($event)\"\n      ></div>\n    </div>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -102,7 +102,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 37,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -111,7 +111,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 36,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -120,7 +120,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 38,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -129,7 +129,7 @@
                     "defaultValue": "\"Accordion Title\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 35,
                     "type": "string",
                     "decorators": []
                 }
@@ -143,7 +143,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -160,7 +160,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -190,12 +190,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n      <button class=\"asdf-accordion-header\" (click)=\"toggleAccordion()\">\n        {{ title }}\n        <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n      </button>\n\n      <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n        <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n          <ng-content></ng-content>\n\n          <!-- Optional placeholder -->\n          <div\n            *ngIf=\"showPlaceholder\"\n            class=\"placeholder-well\"\n            (mousemove)=\"updateCoords($event)\"\n          ></div>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.css\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n  @Input() borderless: boolean = false;\n  @Input() showPlaceholder: boolean = true;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n  updateCoords(event: MouseEvent) {\n    const target = event.target as HTMLElement;\n    target.style.setProperty(\"--x\", `${event.offsetX}px`);\n    target.style.setProperty(\"--y\", `${event.offsetY}px`);\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n      <button\n        class=\"asdf-accordion-header text-md text-muted\"\n        (click)=\"toggleAccordion()\"\n      >\n        {{ title }}\n        <i class=\"icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}\"></i>\n      </button>\n\n      <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n        <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n          <ng-content></ng-content>\n\n          <!-- Optional placeholder -->\n          <div\n            *ngIf=\"showPlaceholder\"\n            class=\"placeholder-well\"\n            (mousemove)=\"updateCoords($event)\"\n          ></div>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.scss\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n  @Input() borderless: boolean = false;\n  @Input() showPlaceholder: boolean = true;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n  updateCoords(event: MouseEvent) {\n    const target = event.target as HTMLElement;\n    target.style.setProperty(\"--x\", `${event.offsetX}px`);\n    target.style.setProperty(\"--y\", `${event.offsetY}px`);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-accordion {\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.asdf-accordion:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.001);\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  padding: 10px;\n  background: #fff;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n\n  font-weight: 600;\n  color: #555e67;\n}\n\n.asdf-accordion.borderless {\n  border: none;\n  padding: 0;\n}\n\n.asdf-accordion-content {\n  padding: 16px;\n  background: white;\n  border-top: 2px solid #e1e4e8;\n}\n\n.asdf-accordion-wrapper {\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.3s ease, padding 0.3s ease;\n}\n\n.asdf-accordion-wrapper.open {\n  max-height: 500px;\n  padding-top: 8px;\n}\n\n.asdf-accordion-icon {\n  font-size: 14px;\n  padding-right: 5px;\n}\n\n.placeholder-well {\n  position: relative;\n  background-color: #f7f7f7;\n  height: 150px;\n  overflow: hidden;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: var(--y, 0);\n    left: var(--x, 0);\n    transform: translate(-50%, -50%);\n    width: 200px;\n    height: 200px;\n    background: radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.75) 0%,\n      transparent 80%\n    );\n    pointer-events: none;\n    transition: opacity 0.2s ease;\n    opacity: 0;\n  }\n\n  &:hover:after {\n    opacity: 1;\n  }\n}\n",
-                    "styleUrl": "./accordion.component.css"
+                    "data": ".asdf-accordion {\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.asdf-accordion:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.001);\n}\n\n.asdf-accordion-header {\n  width: 100%;\n  text-align: left;\n  padding: 10px;\n  background: #fff;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n}\n\n.asdf-accordion.borderless {\n  border: none;\n  padding: 0;\n}\n\n.asdf-accordion-content {\n  padding: 16px;\n  background: white;\n  border-top: 2px solid #e1e4e8;\n}\n\n.asdf-accordion-wrapper {\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.3s ease, padding 0.3s ease;\n}\n\n.asdf-accordion-wrapper.open {\n  max-height: 500px;\n  padding-top: 2px;\n}\n\n.asdf-accordion-icon {\n  padding-right: 5px;\n}\n\n.placeholder-well {\n  position: relative;\n  background-color: #f7f7f7;\n  height: 150px;\n  overflow: hidden;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: var(--y, 0);\n    left: var(--x, 0);\n    transform: translate(-50%, -50%);\n    width: 200px;\n    height: 200px;\n    background: radial-gradient(\n      circle,\n      rgba(255, 255, 255, 0.75) 0%,\n      transparent 80%\n    );\n    pointer-events: none;\n    transition: opacity 0.2s ease;\n    opacity: 0;\n  }\n\n  &:hover:after {\n    opacity: 1;\n  }\n}\n",
+                    "styleUrl": "./accordion.component.scss"
                 }
             ],
             "stylesData": "",
@@ -544,7 +544,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-24d60f9c9a22a28cc411ccc732fbdab6e2ec6d2dd1363ddf8ca147c8db6dfe45893a4ed24f1aff7195285fa8f38a64bfef8c380cd4df9c924c749136ca8c78ee",
+            "id": "component-CardComponent-5708019a69c0900534fb69d77e70eac81dce5dcc9bf1e3d2bfc15444508afb6808a2fb24f25c6897879e0da3d00cdb2465df08a2d03727ab45cc9a75a4776a00",
             "file": "src/stories/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -553,10 +553,10 @@
             "providers": [],
             "selector": "asdf-card",
             "styleUrls": [
-                "./card.component.css"
+                "./card.component.scss"
             ],
             "styles": [],
-            "template": "<div [ngClass]=\"container ? 'container' : 'card'\">\n  <div class=\"card-stack\">\n    <div class=\"card-title-stack\">\n      <!-- Conditional Rendering of Title and Subtitle -->\n      <p class=\"card-title\" *ngIf=\"showTitle\">{{ title }}</p>\n      <p class=\"card-subtitle\" *ngIf=\"showSubtitle\">{{ subtitle }}</p>\n    </div>\n\n    <!-- Single div with dynamic class -->\n    <div\n      [ngClass]=\"showPlaceholder ? 'card-placeholder' : 'card-content'\"\n      (click)=\"navigateTo()\"\n    >\n      <ng-content></ng-content>\n    </div>\n  </div>\n</div>\n",
+            "template": "<div [ngClass]=\"container ? 'container' : 'card'\">\n  <div class=\"card-stack\">\n    <div class=\"card-title-stack\">\n      <!-- Conditional Rendering of Title and Subtitle -->\n      <p class=\"text-md text-muted\" *ngIf=\"showTitle\">{{ title }}</p>\n      <p class=\"text-sm text-muted\" *ngIf=\"showSubtitle\">{{ subtitle }}</p>\n    </div>\n\n    <!-- Single div with dynamic class -->\n    <div\n      [ngClass]=\"showPlaceholder ? 'card-placeholder' : 'card-content'\"\n      (click)=\"navigateTo()\"\n    >\n      <ng-content></ng-content>\n    </div>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -653,12 +653,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n  selector: \"asdf-card\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div [ngClass]=\"container ? 'container' : 'card'\">\n      <div class=\"card-stack\">\n        <div class=\"card-title-stack\">\n          <!-- Conditional Rendering of Title and Subtitle -->\n          <p class=\"card-title\" *ngIf=\"showTitle\">{{ title }}</p>\n          <p class=\"card-subtitle\" *ngIf=\"showSubtitle\">{{ subtitle }}</p>\n        </div>\n\n        <!-- Single div with dynamic class -->\n        <div\n          [ngClass]=\"showPlaceholder ? 'card-placeholder' : 'card-content'\"\n          (click)=\"navigateTo()\"\n        >\n          <ng-content></ng-content>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./card.component.css\"],\n})\nexport class CardComponent {\n  @Input() title: string = \"\";\n  @Input() subtitle: string = \"\";\n  @Input() route: string = \"\";\n  @Input() container: boolean = false;\n  @Input() showTitle: boolean = true;\n  @Input() showSubtitle: boolean = true;\n  @Input() showPlaceholder: boolean = true; // Determines the applied class\n\n  constructor(private router: Router) {}\n\n  navigateTo(): void {\n    if (this.route) {\n      this.router.navigate([this.route]);\n    }\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n  selector: \"asdf-card\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div [ngClass]=\"container ? 'container' : 'card'\">\n      <div class=\"card-stack\">\n        <div class=\"card-title-stack\">\n          <!-- Conditional Rendering of Title and Subtitle -->\n          <p class=\"text-md text-muted\" *ngIf=\"showTitle\">{{ title }}</p>\n          <p class=\"text-sm text-muted\" *ngIf=\"showSubtitle\">{{ subtitle }}</p>\n        </div>\n\n        <!-- Single div with dynamic class -->\n        <div\n          [ngClass]=\"showPlaceholder ? 'card-placeholder' : 'card-content'\"\n          (click)=\"navigateTo()\"\n        >\n          <ng-content></ng-content>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./card.component.scss\"],\n})\nexport class CardComponent {\n  @Input() title: string = \"\";\n  @Input() subtitle: string = \"\";\n  @Input() route: string = \"\";\n  @Input() container: boolean = false;\n  @Input() showTitle: boolean = true;\n  @Input() showSubtitle: boolean = true;\n  @Input() showPlaceholder: boolean = true; // Determines the applied class\n\n  constructor(private router: Router) {}\n\n  navigateTo(): void {\n    if (this.route) {\n      this.router.navigate([this.route]);\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".card,\n.container {\n  font-family: \"Inter\", sans-serif;\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  /* height: 200px; */\n  overflow: visible; /* Allow content overflow if needed */\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  margin-top: 0px;\n  font-size: 16px;\n  font-weight: 600;\n  color: #555e67;\n}\n\n.card-subtitle {\n  font-size: 14px;\n  font-weight: 400;\n  color: #555e67;\n}\n\n.card-title-stack {\n  padding: 0 0 10px 0;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
-                    "styleUrl": "./card.component.css"
+                    "data": ".card,\n.container {\n  position: relative;\n  display: block;\n  padding: 16px;\n  background-color: #fff;\n  border: 2px solid #e1e4e8;\n  border-radius: 8px;\n  transition: all linear 0.5s;\n  width: auto;\n  overflow: visible;\n}\n\n.card:hover {\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.card-title {\n  @extend .text-md;\n}\n\n.card-subtitle {\n  @extend .text-sm;\n}\n\n.card-title-stack {\n  padding: 0 0 10px 0;\n}\n\n.card-placeholder {\n  background-color: #f7f7f7;\n  height: 150px;\n  cursor: pointer;\n}\n\n.card-content {\n  background-color: #ffffff;\n  height: fit-content;\n  cursor: pointer;\n}\n\n.container {\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0 3px 8px #00000014;\n}\n",
+                    "styleUrl": "./card.component.scss"
                 }
             ],
             "stylesData": "",

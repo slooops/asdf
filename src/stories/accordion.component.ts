@@ -7,7 +7,10 @@ import { Component, Input } from "@angular/core";
   imports: [CommonModule],
   template: `
     <div class="asdf-accordion" [class.borderless]="borderless">
-      <button class="asdf-accordion-header" (click)="toggleAccordion()">
+      <button
+        class="asdf-accordion-header text-md text-muted"
+        (click)="toggleAccordion()"
+      >
         {{ title }}
         <i class="icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}"></i>
       </button>
@@ -26,7 +29,7 @@ import { Component, Input } from "@angular/core";
       </div>
     </div>
   `,
-  styleUrls: ["./accordion.component.css"],
+  styleUrls: ["./accordion.component.scss"],
 })
 export class AccordionComponent {
   @Input() title: string = "Accordion Title";

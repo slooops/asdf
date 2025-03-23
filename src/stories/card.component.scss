@@ -1,6 +1,5 @@
 .card,
 .container {
-  font-family: "Inter", sans-serif;
   position: relative;
   display: block;
   padding: 16px;
@@ -9,8 +8,7 @@
   border-radius: 8px;
   transition: all linear 0.5s;
   width: auto;
-  /* height: 200px; */
-  overflow: visible; /* Allow content overflow if needed */
+  overflow: visible;
 }
 
 .card:hover {
@@ -18,16 +16,11 @@
 }
 
 .card-title {
-  margin-top: 0px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #555e67;
+  // @extend .text-md;
 }
 
 .card-subtitle {
-  font-size: 14px;
-  font-weight: 400;
-  color: #555e67;
+  // @extend .text-sm;
 }
 
 .card-title-stack {
@@ -43,7 +36,7 @@
 .card-content {
   background-color: #ffffff;
   height: fit-content;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .container {
