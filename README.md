@@ -1,10 +1,10 @@
 # Explore the Latest Published Version 
 
-[View the Storybook](https://slooops.github.io/asdf/storybook-static/?path=/)
+View the [Storybook!](https://slooops.github.io/asdf/storybook-static/?path=/)
 
 # To Run the Storybook run:
 
-`ng run angular-latest:storybook`. This should open `http://localhost:6006/`
+`ng run angular-latest:storybook`. This should open `http://localhost:6006/`. To Default to Chrome, run: `npm run storybook`
 
 # AngularLatest
 
