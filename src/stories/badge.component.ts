@@ -6,11 +6,10 @@ import { Component, Input } from "@angular/core";
   standalone: true,
   imports: [CommonModule],
   template: `
-    <span class="asdf-badge" [ngClass]="badgeType">
+    <span class="asdf-badge" [ngClass]="'asdf-badge--' + type">
       {{ label }}
     </span>
   `,
-  styleUrls: ["./badge.component.css"],
 })
 export class BadgeComponent {
   @Input() label: string = "Badge";

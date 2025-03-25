@@ -20,7 +20,6 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
       </button>
     </span>
   `,
-  styleUrls: ["./tag.component.css"],
 })
 export class TagComponent {
   @Input() label: string = "Tag";

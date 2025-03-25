@@ -16,7 +16,9 @@ import { Component, Input } from "@angular/core";
             <a [href]="crumb.link" class="asdf-breadcrumb-link">{{
               crumb.label
             }}</a>
-            <span class="asdf-breadcrumb-separator">›</span>
+            <span class="asdf-breadcrumb-separator"
+              ><i class="asdf-icon asdf-icon-caret-left"></i
+            ></span>
           </ng-container>
           <ng-template #lastCrumb>
             <span class="asdf-breadcrumb-current">{{ crumb.label }}</span>

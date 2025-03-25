@@ -6,28 +6,51 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="asdf-toast" [ngClass]="type" *ngIf="visible">
+    <div class="asdf-toast" [ngClass]="'asdf-toast--' + type" *ngIf="visible">
+      <i
+        class="asdf-icon"
+        [ngClass]="'asdf-icon-' + getIconType()"
+        *ngIf="showIcon"
+      ></i>
       {{ message }}
-      <button class="asdf-toast-close" (click)="dismiss()">✖</button>
+      <button class="asdf-toast-close" (click)="dismiss()">
+        <i class="asdf-icon asdf-icon-close"></i>
+      </button>
     </div>
   `,
-  styleUrls: ["./toast.component.css"],
 })
 export class ToastComponent {
   @Input() message: string = "This is a toast message!";
   @Input() type: "success" | "error" | "info" = "info";
   @Input() duration: number = 30000;
+  @Input() persistent: boolean = false;
+  @Input() showIcon: boolean = true;
 
   @Output() onDismiss = new EventEmitter<void>();
 
   visible: boolean = true;
 
   constructor() {
-    setTimeout(() => this.dismiss(), this.duration);
+    if (!this.persistent) {
+      setTimeout(() => this.dismiss(), this.duration);
+    }
   }
 
   dismiss() {
     this.visible = false;
     this.onDismiss.emit();
+  }
+
+  getIconType(): string {
+    switch (this.type) {
+      case "success":
+        return "success";
+      case "error":
+        return "danger";
+      case "info":
+        return "info";
+      default:
+        return "info";
+    }
   }
 }

@@ -34,6 +34,23 @@ export const Default: Story = {
   },
 };
 
+export const WithoutTitle: Story = {
+  args: {
+    title: "",
+    isOpen: true,
+    showActions: true,
+  },
+};
+
+export const WithoutPlaceholder: Story = {
+  args: {
+    title: "No Placeholder Modal",
+    isOpen: true,
+    showActions: true,
+    showPlaceholder: false,
+  },
+};
+
 export const WithoutActions: Story = {
   args: {
     title: "No Actions Modal",

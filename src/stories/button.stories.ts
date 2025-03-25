@@ -43,6 +43,20 @@ export const Tertiary: Story = {
   },
 };
 
+export const Danger: Story = {
+  args: {
+    label: "Danger Button",
+    danger: true, // Add this to render as danger
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: "Disabled Button",
+    disabled: true, // Add this to render as disabled
+  },
+};
+
 export const Large: Story = {
   args: {
     size: "large",

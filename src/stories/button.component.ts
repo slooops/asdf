@@ -5,15 +5,17 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   selector: "asdf-button",
   standalone: true,
   imports: [CommonModule],
-  template: ` <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
-  >
-    {{ label }}
-  </button>`,
-  styleUrls: ["./button.css"],
+  template: `
+    <button
+      type="button"
+      (click)="onClick.emit($event)"
+      [ngClass]="classes"
+      [ngStyle]="{ 'background-color': backgroundColor }"
+      [disabled]="disabled"
+    >
+      {{ label }}
+    </button>
+  `,
 })
 export class ButtonComponent {
   /** Is this the principal call to action on the page? */
@@ -32,6 +34,12 @@ export class ButtonComponent {
   @Input()
   size: "small" | "medium" | "large" = "medium";
 
+  @Input()
+  danger = false;
+
+  @Input()
+  disabled = false;
+
   /**
    * Button contents
    *
@@ -47,8 +55,9 @@ export class ButtonComponent {
   public get classes(): string[] {
     let mode;
 
-    // Add logic for determining the button type
-    if (this.tertiary) {
+    if (this.danger) {
+      mode = "asdf-button--danger";
+    } else if (this.tertiary) {
       mode = "asdf-button--tertiary";
     } else if (this.primary) {
       mode = "asdf-button--primary";
@@ -56,6 +65,12 @@ export class ButtonComponent {
       mode = "asdf-button--secondary";
     }
 
-    return ["asdf-button", `asdf-button--${this.size}`, mode];
+    const classList = ["asdf-button", `asdf-button--${this.size}`, mode];
+
+    if (this.disabled) {
+      classList.push("asdf-button--disabled");
+    }
+
+    return classList;
   }
 }

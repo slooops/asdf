@@ -12,7 +12,11 @@ import { Component, Input } from "@angular/core";
         (click)="toggleAccordion()"
       >
         {{ title }}
-        <i class="icon {{ open ? 'icon-caret-down' : 'icon-caret-right' }}"></i>
+        <i
+          class="asdf-icon {{
+            open ? 'asdf-icon-caret-down' : 'asdf-icon-caret-right'
+          }}"
+        ></i>
       </button>
 
       <div class="asdf-accordion-wrapper" [class.open]="open">

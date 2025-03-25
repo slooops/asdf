@@ -11,15 +11,21 @@ import { ButtonComponent } from "./button.component";
     <div class="asdf-modal" *ngIf="isOpen">
       <div class="asdf-modal-header">
         <h3>{{ title }}</h3>
-        <button class="asdf-modal-close" (click)="close()">✖</button>
+        <button class="asdf-modal-close" (click)="close()">
+          <i class="asdf-icon asdf-icon-close"></i>
+        </button>
       </div>
       <div class="asdf-modal-body">
-        <ng-content></ng-content>
+        <ng-content>
+          <div
+            [ngClass]="showPlaceholder ? 'card-placeholder' : 'card-content'"
+          ></div>
+        </ng-content>
       </div>
       <div class="asdf-modal-footer" *ngIf="showActions">
         <asdf-button
           label="Cancel"
-          [primary]="false"
+          [tertiary]="true"
           (click)="close()"
         ></asdf-button>
         <asdf-button
@@ -36,6 +42,8 @@ export class ModalComponent {
   @Input() title: string = "Modal Title";
   @Input() isOpen: boolean = false;
   @Input() showActions: boolean = true;
+  @Input() showPlaceholder: boolean = true; // Determines the applied class
+
   @Output() closeModal = new EventEmitter<void>();
   @Output() confirmAction = new EventEmitter<void>();
 

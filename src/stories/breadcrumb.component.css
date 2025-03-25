@@ -1,6 +1,7 @@
 .asdf-breadcrumb {
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  font-weight: 500;
   color: #555e67;
   display: block;
 }
@@ -21,16 +22,12 @@
 }
 
 .asdf-breadcrumb-link {
-  color: #049fd9;
+  color: #7a7a7a;
   text-decoration: none;
 }
 
-.asdf-breadcrumb-link:hover {
-  text-decoration: underline;
-}
-
 .asdf-breadcrumb-separator {
-  margin: 0 6px;
+  margin: 0 0px -2px 8px;
   color: #999;
 }
 

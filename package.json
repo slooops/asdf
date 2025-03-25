@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "storybook": "ng run angular-latest:storybook",
+    "storybook": "cross-env BROWSER='google chrome' ng run angular-latest:storybook",
     "build-storybook": "ng run angular-latest:build-storybook",
     "deploy-storybook": "npx storybook-deployer --ci"
   },
@@ -38,6 +38,7 @@
     "@storybook/angular": "^8.3.0",
     "@storybook/blocks": "^8.3.0",
     "@storybook/test": "^8.3.0",
+    "cross-env": "^7.0.3",
     "storybook": "^8.3.0",
     "storybook-deployer": "^2.8.12",
     "typescript": "~5.5.2"
