@@ -17,8 +17,8 @@ const meta: Meta<ToastComponent> = {
   args: {
     message: "This is a persistent toast message!",
     type: "info",
-    duration: 30000,
     persistent: true,
+    duration: undefined,
     showIcon: true,
   },
 };
@@ -32,7 +32,7 @@ export const Success: Story = {
   args: {
     type: "success",
     message: "Success! Your action was successful.",
-    showIcon: false,
+    showIcon: true,
   },
 };
 

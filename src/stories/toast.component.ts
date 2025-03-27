@@ -22,7 +22,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class ToastComponent {
   @Input() message: string = "This is a toast message!";
   @Input() type: "success" | "error" | "info" = "info";
-  @Input() duration: number = 30000;
+  @Input() duration?: number;
   @Input() persistent: boolean = false;
   @Input() showIcon: boolean = true;
 
@@ -30,8 +30,8 @@ export class ToastComponent {
 
   visible: boolean = true;
 
-  constructor() {
-    if (!this.persistent) {
+  ngOnInit(): void {
+    if (!this.persistent && typeof this.duration === "number") {
       setTimeout(() => this.dismiss(), this.duration);
     }
   }
@@ -46,9 +46,8 @@ export class ToastComponent {
       case "success":
         return "success";
       case "error":
-        return "danger";
+        return "danger"; // ✅ matches .asdf-icon-danger
       case "info":
-        return "info";
       default:
         return "info";
     }

@@ -35,7 +35,7 @@ export const Large: Story = {
 };
 
 export const CustomColor: Story = {
-  args: { color: "#FF5733" }, // Example custom color (reddish)
+  args: { color: "#e84b28" }, // Example custom color (reddish)
 };
 
 export const Removable: Story = {
