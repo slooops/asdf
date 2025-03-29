@@ -80,7 +80,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-3da2805bba1daa8979be65522b2ca2204b3a6b63f4ba7bf980d7708bfff57ac852da9040c29fd9918ddc49e96b386538aec8bcd907a6725041598f3a0f3eabea",
+            "id": "component-AccordionComponent-753e6b5a0e8bb3ea6992dcba46eaf869c08a0bc6962ae2a88d71e98ee1b08062c88138c40749a68c9b11ec51471dd53ab43c7ec502d156145b75778ffe1d393a",
             "file": "src/stories/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                 "./accordion.component.scss"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n  <button\n    class=\"asdf-accordion-header text-md text-muted\"\n    (click)=\"toggleAccordion()\"\n  >\n    {{ title }}\n    <i\n      class=\"asdf-icon {{\n        open ? 'asdf-icon-caret-down' : 'asdf-icon-caret-right'\n      }}\"\n    ></i>\n  </button>\n\n  <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n    <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n      <ng-content></ng-content>\n\n      <!-- Optional placeholder -->\n      <div\n        *ngIf=\"showPlaceholder\"\n        class=\"placeholder-well\"\n        (mousemove)=\"updateCoords($event)\"\n      ></div>\n    </div>\n  </div>\n</div>\n",
+            "template": "<div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n  <button\n    class=\"asdf-accordion-header text-md text-muted \"\n    (click)=\"toggleAccordion()\"\n  >\n    {{ title }}\n    <i\n      class=\"asdf-icon {{\n        open ? 'asdf-icon-caret-down' : 'asdf-icon-caret-right'\n      }}\"\n    ></i>\n  </button>\n\n  <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n    <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n      <ng-content></ng-content>\n\n      <!-- Optional placeholder -->\n      <div\n        *ngIf=\"showPlaceholder\"\n        class=\"placeholder-well\"\n        (mousemove)=\"updateCoords($event)\"\n      ></div>\n    </div>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -190,7 +190,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n      <button\n        class=\"asdf-accordion-header text-md text-muted\"\n        (click)=\"toggleAccordion()\"\n      >\n        {{ title }}\n        <i\n          class=\"asdf-icon {{\n            open ? 'asdf-icon-caret-down' : 'asdf-icon-caret-right'\n          }}\"\n        ></i>\n      </button>\n\n      <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n        <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n          <ng-content></ng-content>\n\n          <!-- Optional placeholder -->\n          <div\n            *ngIf=\"showPlaceholder\"\n            class=\"placeholder-well\"\n            (mousemove)=\"updateCoords($event)\"\n          ></div>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.scss\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n  @Input() borderless: boolean = false;\n  @Input() showPlaceholder: boolean = true;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n  updateCoords(event: MouseEvent) {\n    const target = event.target as HTMLElement;\n    target.style.setProperty(\"--x\", `${event.offsetX}px`);\n    target.style.setProperty(\"--y\", `${event.offsetY}px`);\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-accordion\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-accordion\" [class.borderless]=\"borderless\">\n      <button\n        class=\"asdf-accordion-header text-md text-muted \"\n        (click)=\"toggleAccordion()\"\n      >\n        {{ title }}\n        <i\n          class=\"asdf-icon {{\n            open ? 'asdf-icon-caret-down' : 'asdf-icon-caret-right'\n          }}\"\n        ></i>\n      </button>\n\n      <div class=\"asdf-accordion-wrapper\" [class.open]=\"open\">\n        <div class=\"asdf-accordion-content\" *ngIf=\"open\">\n          <ng-content></ng-content>\n\n          <!-- Optional placeholder -->\n          <div\n            *ngIf=\"showPlaceholder\"\n            class=\"placeholder-well\"\n            (mousemove)=\"updateCoords($event)\"\n          ></div>\n        </div>\n      </div>\n    </div>\n  `,\n  styleUrls: [\"./accordion.component.scss\"],\n})\nexport class AccordionComponent {\n  @Input() title: string = \"Accordion Title\";\n  @Input() open: boolean = false;\n  @Input() borderless: boolean = false;\n  @Input() showPlaceholder: boolean = true;\n\n  toggleAccordion() {\n    this.open = !this.open;\n  }\n  updateCoords(event: MouseEvent) {\n    const target = event.target as HTMLElement;\n    target.style.setProperty(\"--x\", `${event.offsetX}px`);\n    target.style.setProperty(\"--y\", `${event.offsetY}px`);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -383,7 +383,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-breadcrumb {\n  font-family: \"Inter\", sans-serif;\n  font-size: 14px;\n  color: #555e67;\n  display: block;\n}\n\n.asdf-breadcrumb-list {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  align-items: center;\n}\n\n.asdf-breadcrumb-item {\n  display: flex;\n  align-items: center;\n}\n\n.asdf-breadcrumb-link {\n  color: #049fd9;\n  text-decoration: none;\n}\n\n.asdf-breadcrumb-link:hover {\n  text-decoration: underline;\n}\n\n.asdf-breadcrumb-separator {\n  margin: 0 6px;\n  color: #999;\n}\n\n.asdf-breadcrumb-current {\n  font-weight: 600;\n  color: #373c42;\n}\n",
+                    "data": ".asdf-breadcrumb {\n  font-family: \"Inter\", sans-serif;\n  font-size: 14px;\n  font-weight: 500;\n  color: #555e67;\n  display: block;\n}\n\n.asdf-breadcrumb-list {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  align-items: center;\n}\n\n.asdf-breadcrumb-item {\n  display: flex;\n  align-items: center;\n}\n\n.asdf-breadcrumb-link {\n  color: #7a7a7a;\n  text-decoration: none;\n}\n\n.asdf-breadcrumb-separator {\n  margin: 0 0px -2px 8px;\n  color: #999;\n}\n\n.asdf-breadcrumb-current {\n  font-weight: 600;\n  color: #373c42;\n}\n",
                     "styleUrl": "./breadcrumb.component.css"
                 }
             ],
@@ -696,7 +696,7 @@
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-64d341d37d53796ff08a5516e9f13bc479571c22b390a6e3ea81a0123b57d746b58e94cdede26c1f463f04ca50f4179d5b6520c4dbc56dcd127e20f2fc4e2129",
+            "id": "component-DropdownComponent-de61b89bf83acd89b60161dc251c9f397dc7cace7009825f5ee90aa9986bb8e9e42c3a2d8541bd7ec357f943a863ccd57e326d51334fb2b2bc32698971038a77",
             "file": "src/stories/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -708,7 +708,7 @@
                 "./dropdown.component.css"
             ],
             "styles": [],
-            "template": "<div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n  <button class=\"asdf-dropdown-trigger\" (click)=\"toggleDropdown()\">\n    {{ selectedLabel || placeholder }}\n    <i class=\"ph-caret-down\"></i>\n  </button>\n\n  <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n    <li\n      *ngFor=\"let item of items; let i = index\"\n      (click)=\"selectItem(item)\"\n      [class.selected]=\"item === selectedItem\"\n      [attr.tabindex]=\"0\"\n      (keydown)=\"onKeydown($event, i)\"\n    >\n      {{ item.label }}\n    </li>\n  </ul>\n</div>\n",
+            "template": "<div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n  <button [ngClass]=\"triggerClasses\" (click)=\"toggleDropdown()\">\n    {{ selectedLabel || placeholder }}\n    <i\n      class=\"asdf-icon asdf-icon-caret-down caret-icon\"\n      [class.rotated]=\"isOpen\"\n      [ngStyle]=\"{\n        filter: style === 'primary' ? 'brightness(0) invert(1)' : 'none'\n      }\"\n    ></i>\n  </button>\n\n  <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n    <li\n      *ngFor=\"let item of items; let i = index\"\n      (click)=\"selectItem(item)\"\n      [class.selected]=\"item === selectedItem\"\n      [attr.tabindex]=\"0\"\n      (keydown)=\"onKeydown($event, i)\"\n    >\n      {{ item.label }}\n    </li>\n  </ul>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -718,7 +718,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 43,
                     "type": "literal type[]",
                     "decorators": []
                 },
@@ -727,8 +727,17 @@
                     "defaultValue": "\"Select an option\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 44,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "style",
+                    "defaultValue": "\"primary\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "\"primary\" | \"secondary\"",
                     "decorators": []
                 }
             ],
@@ -738,7 +747,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 39,
+                    "line": 45,
                     "type": "EventEmitter"
                 }
             ],
@@ -752,7 +761,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 48
                 },
                 {
                     "name": "selectedItem",
@@ -763,7 +772,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 49
                 },
                 {
                     "name": "selectedLabel",
@@ -774,7 +783,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 50
                 }
             ],
             "methodsClass": [
@@ -791,7 +800,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 57,
+                    "line": 64,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -834,7 +843,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 70,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -871,7 +880,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -892,7 +901,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -916,7 +925,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 57
+                    "line": 64
                 }
             ],
             "standalone": true,
@@ -929,16 +938,27 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n  Component,\n  Input,\n  Output,\n  EventEmitter,\n  HostListener,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-dropdown\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n      <button class=\"asdf-dropdown-trigger\" (click)=\"toggleDropdown()\">\n        {{ selectedLabel || placeholder }}\n        <i class=\"ph-caret-down\"></i>\n      </button>\n\n      <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n        <li\n          *ngFor=\"let item of items; let i = index\"\n          (click)=\"selectItem(item)\"\n          [class.selected]=\"item === selectedItem\"\n          [attr.tabindex]=\"0\"\n          (keydown)=\"onKeydown($event, i)\"\n        >\n          {{ item.label }}\n        </li>\n      </ul>\n    </div>\n  `,\n  styleUrls: [\"./dropdown.component.css\"],\n})\nexport class DropdownComponent {\n  @Input() items: { label: string; value: any }[] = [];\n  @Input() placeholder: string = \"Select an option\";\n  @Output() selectionChange = new EventEmitter<any>();\n\n  isOpen = false;\n  selectedItem: any = null;\n  selectedLabel: string = \"\";\n\n  toggleDropdown() {\n    this.isOpen = !this.isOpen;\n  }\n\n  selectItem(item: { label: string; value: any }) {\n    this.selectedItem = item.value;\n    this.selectedLabel = item.label;\n    this.isOpen = false;\n    this.selectionChange.emit(item.value);\n  }\n\n  @HostListener(\"document:click\", [\"$event\"])\n  closeDropdown(event: Event) {\n    if (!(event.target as HTMLElement).closest(\".asdf-dropdown\")) {\n      this.isOpen = false;\n    }\n  }\n\n  onKeydown(event: KeyboardEvent, index: number) {\n    const listLength = this.items.length;\n    const parent = (event.target as HTMLElement).parentElement;\n\n    if (!parent) return;\n\n    if (event.key === \"ArrowDown\") {\n      const nextIndex = (index + 1) % listLength;\n      (parent.children[nextIndex] as HTMLElement).focus();\n    } else if (event.key === \"ArrowUp\") {\n      const prevIndex = (index - 1 + listLength) % listLength;\n      (parent.children[prevIndex] as HTMLElement).focus();\n    } else if (event.key === \"Enter\") {\n      this.selectItem(this.items[index]);\n    }\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n  Component,\n  Input,\n  Output,\n  EventEmitter,\n  HostListener,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-dropdown\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-dropdown\" [class.open]=\"isOpen\">\n      <button [ngClass]=\"triggerClasses\" (click)=\"toggleDropdown()\">\n        {{ selectedLabel || placeholder }}\n        <i\n          class=\"asdf-icon asdf-icon-caret-down caret-icon\"\n          [class.rotated]=\"isOpen\"\n          [ngStyle]=\"{\n            filter: style === 'primary' ? 'brightness(0) invert(1)' : 'none'\n          }\"\n        ></i>\n      </button>\n\n      <ul class=\"asdf-dropdown-menu\" *ngIf=\"isOpen\">\n        <li\n          *ngFor=\"let item of items; let i = index\"\n          (click)=\"selectItem(item)\"\n          [class.selected]=\"item === selectedItem\"\n          [attr.tabindex]=\"0\"\n          (keydown)=\"onKeydown($event, i)\"\n        >\n          {{ item.label }}\n        </li>\n      </ul>\n    </div>\n  `,\n  styleUrls: [\"./dropdown.component.css\"],\n})\nexport class DropdownComponent {\n  @Input() items: { label: string; value: any }[] = [];\n  @Input() placeholder: string = \"Select an option\";\n  @Output() selectionChange = new EventEmitter<any>();\n  @Input() style: \"primary\" | \"secondary\" = \"primary\";\n\n  isOpen = false;\n  selectedItem: any = null;\n  selectedLabel: string = \"\";\n\n  toggleDropdown() {\n    this.isOpen = !this.isOpen;\n  }\n\n  selectItem(item: { label: string; value: any }) {\n    this.selectedItem = item.value;\n    this.selectedLabel = item.label;\n    this.isOpen = false;\n    this.selectionChange.emit(item.value);\n  }\n\n  @HostListener(\"document:click\", [\"$event\"])\n  closeDropdown(event: Event) {\n    if (!(event.target as HTMLElement).closest(\".asdf-dropdown\")) {\n      this.isOpen = false;\n    }\n  }\n\n  onKeydown(event: KeyboardEvent, index: number) {\n    const listLength = this.items.length;\n    const parent = (event.target as HTMLElement).parentElement;\n\n    if (!parent) return;\n\n    if (event.key === \"ArrowDown\") {\n      const nextIndex = (index + 1) % listLength;\n      (parent.children[nextIndex] as HTMLElement).focus();\n    } else if (event.key === \"ArrowUp\") {\n      const prevIndex = (index - 1 + listLength) % listLength;\n      (parent.children[prevIndex] as HTMLElement).focus();\n    } else if (event.key === \"Enter\") {\n      this.selectItem(this.items[index]);\n    }\n  }\n\n  get triggerClasses() {\n    return [\n      \"asdf-dropdown-trigger\",\n      this.style === \"secondary\" ? \"asdf-dropdown-trigger--secondary\" : \"\",\n    ];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".asdf-dropdown {\n  position: relative;\n  display: inline-block;\n  font-family: \"Inter\", sans-serif;\n}\n\n.asdf-dropdown-trigger {\n  background-color: #049fd9;\n  color: white;\n  font-weight: bold;\n  padding: 8px 12px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\n.asdf-dropdown-trigger:hover {\n  background-color: #005c85;\n}\n\n.asdf-dropdown-menu {\n  position: absolute;\n  left: 0;\n  top: 100%;\n  background: white;\n  border: 1px solid #ddd;\n  border-radius: 6px;\n  width: 180px;\n  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);\n  z-index: 10;\n  padding: 8px 0;\n  list-style: none;\n  margin: 0;\n}\n\n.asdf-dropdown-menu li {\n  padding: 8px 12px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n}\n\n.asdf-dropdown-menu li:hover,\n.asdf-dropdown-menu li.selected {\n  background: #f0f0f0;\n}\n\n.asdf-dropdown.open .asdf-dropdown-menu {\n  display: block;\n}\n",
+                    "data": ".asdf-dropdown {\n  position: relative;\n  display: inline-block;\n  font-family: \"Inter\", sans-serif;\n}\n\n.caret-icon {\n  display: inline-block;\n  transition: transform 0.3s ease;\n  margin-left: 8px;\n}\n\n.caret-icon.rotated {\n  transform: rotate(180deg);\n}\n\n.asdf-dropdown-trigger {\n  background-color: #049fd9;\n  color: white;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 6px;\n  border: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\n/* .asdf-dropdown-trigger:hover {\n  background-color: #005c85;\n} */\n\n.asdf-dropdown-menu {\n  /* margin-top: 20px; */\n  position: absolute;\n  left: 0;\n  top: 100%;\n  background: white;\n  /* border: 1px solid #ddd; */\n  border-radius: 6px;\n  width: 180px;\n  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);\n  z-index: 10;\n  padding: 5px 0;\n  list-style: none;\n  margin: 0;\n  font-size: 13px;\n}\n\n.asdf-dropdown-menu li {\n  padding: 8px 12px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n}\n\n.asdf-dropdown-menu li:hover,\n.asdf-dropdown-menu li.selected {\n  background: #f0f0f0;\n}\n\n.asdf-dropdown.open .asdf-dropdown-menu {\n  display: block;\n}\n\n.asdf-dropdown-trigger--secondary {\n  background-color: transparent;\n  border: 2px solid #373c42;\n  color: #373c42;\n}\n\n.asdf-dropdown-trigger--secondary:hover {\n  background-color: rgba(234, 234, 234, 0.1);\n}\n\n.asdf-dropdown-trigger--secondary:focus {\n  outline: none;\n  /* box-shadow: 0 0 0 2px rgba(4, 159, 217, 0.5); */\n}\n",
                     "styleUrl": "./dropdown.component.css"
                 }
             ],
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "accessors": {
+                "triggerClasses": {
+                    "name": "triggerClasses",
+                    "getSignature": {
+                        "name": "triggerClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 87
+                    }
+                }
+            }
         },
         {
             "name": "FormComponent",
@@ -1496,6 +1516,83 @@
             "extends": []
         },
         {
+            "name": "ProgressComponent",
+            "id": "component-ProgressComponent-c535f766e7f15f35af37eb4c5084181be54ab8e5f4522f6f6b427a0fba5d8a86552a7b7b16d6ae556c1d7b7ec27c1f8b7c4be3571840cf6a1609c509665dddab",
+            "file": "src/stories/progress.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "asdf-progress",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div\n  class=\"asdf-progress\"\n  [ngClass]=\"{\n    'asdf-progress--indeterminate': indeterminate,\n    'asdf-progress--error': error\n  }\"\n>\n  <div\n    class=\"asdf-progress-bar\"\n    [style.width.%]=\"indeterminate ? null : progress\"\n    [style.backgroundColor]=\"error ? null : color\"\n  ></div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "\"#049fd9\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "error",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "indeterminate",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "progress",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-progress\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div\n      class=\"asdf-progress\"\n      [ngClass]=\"{\n        'asdf-progress--indeterminate': indeterminate,\n        'asdf-progress--error': error\n      }\"\n    >\n      <div\n        class=\"asdf-progress-bar\"\n        [style.width.%]=\"indeterminate ? null : progress\"\n        [style.backgroundColor]=\"error ? null : color\"\n      ></div>\n    </div>\n  `,\n})\nexport class ProgressComponent {\n  @Input() progress: number = 0;\n  @Input() indeterminate: boolean = false;\n  @Input() error: boolean = false;\n  @Input() color: string = \"#049fd9\"; // Default to primary color\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "StepperComponent",
             "id": "component-StepperComponent-6686980294d4ab54aebfb45bdd6cf3d2787bd5bbbb5404b9ffbcac186fb97b00413411945c9df3f465de3377103a633cf88527212e963a5e36098b48d703327c",
             "file": "src/stories/stepper.component.ts",
@@ -1685,7 +1782,7 @@
         },
         {
             "name": "TagComponent",
-            "id": "component-TagComponent-4589e24a77d08d0c5ef3e0322bc4df1979efbd4735ee9ecd60f3749890accc2842b1380df6406bd41c6fa6447a7d1ee1339bdeba751c874c3cc7e1d4b12092e6",
+            "id": "component-TagComponent-e1b44b37204d78fc246487d5aa9ceff2d6da8a8577620e830ee5cb55b10a53abd598f7b813551d88042c71f94e0daff09ec97c88cfba6c162e93246731808897",
             "file": "src/stories/tag.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1695,7 +1792,7 @@
             "selector": "asdf-tag",
             "styleUrls": [],
             "styles": [],
-            "template": "<span\n  [ngClass]=\"['asdf-tag', 'asdf-tag--' + size]\"\n  [ngStyle]=\"{ 'background-color': color }\"\n>\n  {{ label }}\n  <button\n    *ngIf=\"removable\"\n    class=\"asdf-tag-remove\"\n    (click)=\"onRemove.emit()\"\n  >\n    ✖\n  </button>\n</span>\n",
+            "template": "<span\n  [ngClass]=\"['asdf-tag', 'asdf-tag--' + size]\"\n  [ngStyle]=\"{\n    'background-color': color,\n    color: textColor\n  }\"\n>\n  {{ label }}\n  <button\n    *ngIf=\"removable\"\n    class=\"asdf-tag-remove\"\n    (click)=\"onRemove.emit()\"\n  >\n    ✖\n  </button>\n</span>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1705,7 +1802,7 @@
                     "defaultValue": "\"#E1E4E8\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -1714,7 +1811,7 @@
                     "defaultValue": "\"Tag\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -1723,7 +1820,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 31,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1732,7 +1829,7 @@
                     "defaultValue": "\"medium\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 30,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -1743,12 +1840,41 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 33,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "hexToRgb",
+                    "args": [
+                        {
+                            "name": "hex",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "literal type | null",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "hex",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1763,11 +1889,22 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-tag\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span\n      [ngClass]=\"['asdf-tag', 'asdf-tag--' + size]\"\n      [ngStyle]=\"{ 'background-color': color }\"\n    >\n      {{ label }}\n      <button\n        *ngIf=\"removable\"\n        class=\"asdf-tag-remove\"\n        (click)=\"onRemove.emit()\"\n      >\n        ✖\n      </button>\n    </span>\n  `,\n})\nexport class TagComponent {\n  @Input() label: string = \"Tag\";\n  @Input() color: string = \"#E1E4E8\"; // Default gray background\n  @Input() size: \"small\" | \"medium\" | \"large\" = \"medium\";\n  @Input() removable: boolean = false;\n\n  @Output() onRemove = new EventEmitter<void>();\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-tag\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span\n      [ngClass]=\"['asdf-tag', 'asdf-tag--' + size]\"\n      [ngStyle]=\"{\n        'background-color': color,\n        color: textColor\n      }\"\n    >\n      {{ label }}\n      <button\n        *ngIf=\"removable\"\n        class=\"asdf-tag-remove\"\n        (click)=\"onRemove.emit()\"\n      >\n        ✖\n      </button>\n    </span>\n  `,\n})\nexport class TagComponent {\n  @Input() label: string = \"Tag\";\n  @Input() color: string = \"#E1E4E8\"; // Default gray background\n  @Input() size: \"small\" | \"medium\" | \"large\" = \"medium\";\n  @Input() removable: boolean = false;\n\n  @Output() onRemove = new EventEmitter<void>();\n\n  get textColor(): string {\n    const rgb = this.hexToRgb(this.color);\n    if (!rgb) return \"#373c42\"; // fallback to dark grey\n\n    const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;\n\n    // Return white text if background is dark\n    return luminance < 0.5 ? \"#ffffff\" : \"#373c42\"; // tweak the threshold if needed\n  }\n\n  hexToRgb(hex: string): { r: number; g: number; b: number } | null {\n    const shorthandRegex = /^#?([a-f\\d])([a-f\\d])([a-f\\d])$/i;\n    hex = hex.replace(shorthandRegex, (_, r, g, b) => r + r + g + g + b + b);\n\n    const result = /^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i.exec(hex);\n    return result\n      ? {\n          r: parseInt(result[1], 16),\n          g: parseInt(result[2], 16),\n          b: parseInt(result[3], 16),\n        }\n      : null;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "accessors": {
+                "textColor": {
+                    "name": "textColor",
+                    "getSignature": {
+                        "name": "textColor",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 35
+                    }
+                }
+            }
         },
         {
             "name": "TaskComponent",
@@ -1834,7 +1971,7 @@
         },
         {
             "name": "ToastComponent",
-            "id": "component-ToastComponent-82d234c2f9ec0ef211faac6d9d42f12781fdc6cb06da8334e67961cebbb58a8f6acfe7f4c522737d484890e62b873edf3982e3b3c5e065ac6de40f35e0f5f78e",
+            "id": "component-ToastComponent-6275b79966cbbc3cac3cb745c6d4dfff84091e8a5e792e351f079667f0e4640726e81c66aa18d14117abf500a5c6bcf14cdf1c8693c475fff57f7d1f746d49ea",
             "file": "src/stories/toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1851,7 +1988,6 @@
             "inputsClass": [
                 {
                     "name": "duration",
-                    "defaultValue": "30000",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 25,
@@ -1938,6 +2074,16 @@
                     "line": 44,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -1954,18 +2100,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-toast\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-toast\" [ngClass]=\"'asdf-toast--' + type\" *ngIf=\"visible\">\n      <i\n        class=\"asdf-icon\"\n        [ngClass]=\"'asdf-icon-' + getIconType()\"\n        *ngIf=\"showIcon\"\n      ></i>\n      {{ message }}\n      <button class=\"asdf-toast-close\" (click)=\"dismiss()\">\n        <i class=\"asdf-icon asdf-icon-close\"></i>\n      </button>\n    </div>\n  `,\n})\nexport class ToastComponent {\n  @Input() message: string = \"This is a toast message!\";\n  @Input() type: \"success\" | \"error\" | \"info\" = \"info\";\n  @Input() duration: number = 30000;\n  @Input() persistent: boolean = false;\n  @Input() showIcon: boolean = true;\n\n  @Output() onDismiss = new EventEmitter<void>();\n\n  visible: boolean = true;\n\n  constructor() {\n    if (!this.persistent) {\n      setTimeout(() => this.dismiss(), this.duration);\n    }\n  }\n\n  dismiss() {\n    this.visible = false;\n    this.onDismiss.emit();\n  }\n\n  getIconType(): string {\n    switch (this.type) {\n      case \"success\":\n        return \"success\";\n      case \"error\":\n        return \"danger\";\n      case \"info\":\n        return \"info\";\n      default:\n        return \"info\";\n    }\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, Input, Output, EventEmitter } from \"@angular/core\";\n\n@Component({\n  selector: \"asdf-toast\",\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"asdf-toast\" [ngClass]=\"'asdf-toast--' + type\" *ngIf=\"visible\">\n      <i\n        class=\"asdf-icon\"\n        [ngClass]=\"'asdf-icon-' + getIconType()\"\n        *ngIf=\"showIcon\"\n      ></i>\n      {{ message }}\n      <button class=\"asdf-toast-close\" (click)=\"dismiss()\">\n        <i class=\"asdf-icon asdf-icon-close\"></i>\n      </button>\n    </div>\n  `,\n})\nexport class ToastComponent {\n  @Input() message: string = \"This is a toast message!\";\n  @Input() type: \"success\" | \"error\" | \"info\" = \"info\";\n  @Input() duration?: number;\n  @Input() persistent: boolean = false;\n  @Input() showIcon: boolean = true;\n\n  @Output() onDismiss = new EventEmitter<void>();\n\n  visible: boolean = true;\n\n  ngOnInit(): void {\n    if (!this.persistent && typeof this.duration === \"number\") {\n      setTimeout(() => this.dismiss(), this.duration);\n    }\n  }\n\n  dismiss() {\n    this.visible = false;\n    this.onDismiss.emit();\n  }\n\n  getIconType(): string {\n    switch (this.type) {\n      case \"success\":\n        return \"success\";\n      case \"error\":\n        return \"danger\"; // ✅ matches .asdf-icon-danger\n      case \"info\":\n      default:\n        return \"info\";\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 31
-            },
             "extends": []
         }
     ],
@@ -2043,7 +2181,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 12,
+        "count": 11,
         "status": "low",
         "files": [
             {
@@ -2116,7 +2254,7 @@
                 "linktype": "component",
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -2174,6 +2312,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/progress.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgressComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/stepper.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2197,7 +2344,7 @@
                 "linktype": "component",
                 "name": "TagComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
