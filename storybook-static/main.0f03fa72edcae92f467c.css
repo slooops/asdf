@@ -16,14 +16,14 @@ body {
   font-weight: 400;
 }
 
-.text-sm, .asdf-tag-remove, .asdf-button--medium, .card-subtitle {
+.text-sm, .asdf-toast, .asdf-tag-remove, .asdf-button--medium, .card-subtitle {
   font-size: 12px;
   font-weight: 400;
 }
 
-.text-md, .asdf-toast, .asdf-tag--large, .asdf-button--large, .card-title {
+.text-md, .asdf-tag--large, .asdf-button--large, .card-title {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .text-lg {
@@ -333,8 +333,8 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  padding: 12px 16px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
   color: white;
   display: flex;
   align-items: center;
@@ -356,6 +356,7 @@ body {
   margin-left: auto;
   display: flex;
   align-items: center;
+  margin: 0 -5px 0 0;
 }
 .asdf-toast-close .asdf-icon {
   width: 16px;
