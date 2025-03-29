@@ -8,7 +8,7 @@ import { Component, Input } from "@angular/core";
   template: `
     <div class="asdf-accordion" [class.borderless]="borderless">
       <button
-        class="asdf-accordion-header text-md text-muted"
+        class="asdf-accordion-header text-md text-muted "
         (click)="toggleAccordion()"
       >
         {{ title }}

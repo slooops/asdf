@@ -13,9 +13,15 @@ import {
   imports: [CommonModule],
   template: `
     <div class="asdf-dropdown" [class.open]="isOpen">
-      <button class="asdf-dropdown-trigger" (click)="toggleDropdown()">
+      <button [ngClass]="triggerClasses" (click)="toggleDropdown()">
         {{ selectedLabel || placeholder }}
-        <i class="ph-caret-down"></i>
+        <i
+          class="asdf-icon asdf-icon-caret-down caret-icon"
+          [class.rotated]="isOpen"
+          [ngStyle]="{
+            filter: style === 'primary' ? 'brightness(0) invert(1)' : 'none'
+          }"
+        ></i>
       </button>
 
       <ul class="asdf-dropdown-menu" *ngIf="isOpen">
@@ -37,6 +43,7 @@ export class DropdownComponent {
   @Input() items: { label: string; value: any }[] = [];
   @Input() placeholder: string = "Select an option";
   @Output() selectionChange = new EventEmitter<any>();
+  @Input() style: "primary" | "secondary" = "primary";
 
   isOpen = false;
   selectedItem: any = null;
@@ -75,5 +82,12 @@ export class DropdownComponent {
     } else if (event.key === "Enter") {
       this.selectItem(this.items[index]);
     }
+  }
+
+  get triggerClasses() {
+    return [
+      "asdf-dropdown-trigger",
+      this.style === "secondary" ? "asdf-dropdown-trigger--secondary" : "",
+    ];
   }
 }
