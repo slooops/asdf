@@ -2,7 +2,9 @@ import type { StorybookConfig } from "@storybook/angular";
 const isProduction = process.env.NODE_ENV === "production";
 
 const config: StorybookConfig = {
-  stories: ["../src/stories/**/*.stories.ts"], // Updated to match your file structure
+  // Updated to match your file structure
+  stories: ["../src/stories/**/*.stories.ts"],
+
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
@@ -10,18 +12,25 @@ const config: StorybookConfig = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
   ],
+
   framework: {
     name: "@storybook/angular",
     options: {},
   },
+
   staticDirs: ["../public"],
 
+  // Keep local Storybook working
   managerHead: (head) =>
     isProduction
       ? `
         ${head}
-        <base href="/asdf/storybook-static/">
+        <base href="/asdf/">
       `
-      : head, // Keep local Storybook working
+      : head,
+
+  docs: {
+    autodocs: true
+  }
 };
 export default config;

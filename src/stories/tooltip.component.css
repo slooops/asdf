@@ -1,0 +1,50 @@
+.asdf-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  cursor: default;
+}
+
+.asdf-tooltip {
+  position: absolute;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #373c42;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.asdf-tooltip-wrapper:hover .asdf-tooltip,
+.asdf-tooltip-wrapper:focus-within .asdf-tooltip {
+  opacity: 1;
+}
+
+.asdf-tooltip--top {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.asdf-tooltip--bottom {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.asdf-tooltip--left {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.asdf-tooltip--right {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}

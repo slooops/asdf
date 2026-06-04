@@ -2,9 +2,17 @@ import { Meta, StoryObj } from "@storybook/angular";
 import { StepperComponent } from "./stepper.component";
 
 const meta: Meta<StepperComponent> = {
-  title: "Components/Stepper",
+  title: "Deprecated/Stepper",
   component: StepperComponent,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "**⚠️ DEPRECATED** — This component is deprecated and will be removed in a future release. Do not use in new code.",
+      },
+    },
+  },
   argTypes: {
     steps: { control: "object" },
     activeStep: { control: "number" },

@@ -32,6 +32,7 @@ import { CommonModule } from "@angular/common";
   `,
   styleUrls: ["./stepper.css"],
 })
+/** @deprecated This component is deprecated and will be removed in a future release. */
 export class StepperComponent {
   /** Array of steps for the stepper */
   @Input() steps: Array<{ label: string; subCaption?: string }> = [];
